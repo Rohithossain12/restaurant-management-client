@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const AddFood = () => {
   const { user } = useContext(AuthContext);
@@ -16,12 +18,12 @@ const AddFood = () => {
     const description = form.description.value;
     const ingredients = form.ingredients.value;
     const making = form.making.value;
-    const addBy ={
-      email:user?.email,
-      name :user?.displayName
-    }
-  
-    console.log({
+    const addBy = {
+      email: user?.email,
+      name: user?.displayName,
+    };
+
+    const formData = {
       food,
       image,
       category,
@@ -31,8 +33,19 @@ const AddFood = () => {
       description,
       ingredients,
       making,
-      addBy
-    });
+      addBy,
+    };
+
+    // make a post request using axios
+    try {
+      axios.post("http://localhost:5000/addFood", formData);
+      // reset form data
+      form.reset();
+      // show toast
+      toast.success("Food Added Successfully....!!");
+    } catch (err) {
+      toast.error(err.message);
+    }
   };
 
   return (
