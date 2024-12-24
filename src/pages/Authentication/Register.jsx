@@ -14,6 +14,7 @@ const Register = () => {
     errorMessage,
     setErrorMessage,
     setUser,
+    updateUserProfile,
   } = useContext(AuthContext);
 
   const handleGoogleLogin = () => {
@@ -58,6 +59,11 @@ const Register = () => {
         const user = result.user;
         setUser(user);
         toast.success("Register Successfully");
+        updateUserProfile({ displayName: name, photoURL: photo })
+          .then(() => {})
+          .catch((error) => {
+            setErrorMessage(error);
+          });
         navigate("/");
       })
       .catch((error) => {

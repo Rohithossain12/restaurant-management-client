@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
+import toast from "react-hot-toast";
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
@@ -16,7 +17,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [errorMessage,setErrorMessage]=useState("")
+  const [errorMessage, setErrorMessage] = useState("");
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -34,8 +35,12 @@ const AuthProvider = ({ children }) => {
   };
 
   const logOut = () => {
+    signOut(auth)
+      .then(() => {
+        toast.success(" Logout Successful");
+      })
+      .catch(() => {});
     setLoading(true);
-    return signOut(auth);
   };
 
   const updateUserProfile = (name, photo) => {
@@ -44,7 +49,6 @@ const AuthProvider = ({ children }) => {
       photoURL: photo,
     });
   };
-
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -65,10 +69,8 @@ const AuthProvider = ({ children }) => {
     setLoading,
     errorMessage,
     setErrorMessage,
-    updateUserProfile
+    updateUserProfile,
   };
-
- 
 
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
