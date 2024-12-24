@@ -1,8 +1,21 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import toast from "react-hot-toast";
 const Navbar = () => {
-const {user,logOut} =useContext(AuthContext) 
+  const { user, logOut } = useContext(AuthContext);
+ 
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        toast.success("logout successful");
+        navigate('/');
+      })
+      .catch();
+  };
+
   return (
     <div className="navbar bg-base-100 shadow-sm container px-4 mx-auto">
       <div className="flex-1">
@@ -39,10 +52,11 @@ const {user,logOut} =useContext(AuthContext)
             >
               <div title={user?.displayName} className="w-10 rounded-full">
                 <img
-                  referrerPolicy="no-referrer"
+                  rPolicy="no-referrer"
                   alt="User Profile Photo"
                   src={user?.photoURL}
                 />
+                handleLogout
               </div>
             </div>
             <ul
@@ -60,10 +74,10 @@ const {user,logOut} =useContext(AuthContext)
               <li>
                 <Link to="/myOrders">My Orders</Link>
               </li>
-             
+
               <li className="mt-2">
                 <button
-                  onClick={logOut}
+                  onClick={handleLogout}
                   className="bg-gray-200 block text-center"
                 >
                   Logout

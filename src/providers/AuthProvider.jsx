@@ -9,13 +9,13 @@ import {
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
-import toast from "react-hot-toast";
 
-export const AuthContext = createContext(null);
+
+export const AuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -35,12 +35,8 @@ const AuthProvider = ({ children }) => {
   };
 
   const logOut = () => {
-    signOut(auth)
-      .then(() => {
-        toast.success(" Logout Successful");
-      })
-      .catch(() => {});
     setLoading(true);
+    return signOut(auth);
   };
 
   const updateUserProfile = (name, photo) => {
@@ -55,7 +51,7 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
       setLoading(false);
     });
-    return unSubscribe();
+    return () => unSubscribe();
   }, []);
 
   const authInfo = {

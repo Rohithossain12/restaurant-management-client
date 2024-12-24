@@ -15,7 +15,6 @@ const Login = () => {
         const user = result.user;
         setUser(user);
         toast.success(" Login Successful");
-
         navigate("/");
       })
       .catch(() => {
@@ -59,7 +58,7 @@ const Login = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen mt-8 mb-10 ">
+    <div className="hero bg-base-200 min-h-screen mt-8 mb-10  rounded-lg">
       <div className="hero-content flex-col lg:flex-row-reverse ">
         <div className="text-center lg:text-left ">
           <Lottie animationData={loginAnimationData}></Lottie>
