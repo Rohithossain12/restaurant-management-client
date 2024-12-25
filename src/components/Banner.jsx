@@ -14,7 +14,7 @@ const Banner = () => {
             repeat: Infinity,
             ease: easeOut,
           }}
-          className="text-2xl md:text-3xl lg:text-4xl font-bold"
+          className="text-xl md:text-3xl lg:text-4xl font-bold"
         >
           Savor the{" "}
           <motion.span
