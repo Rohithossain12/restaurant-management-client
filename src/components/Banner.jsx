@@ -40,7 +40,7 @@ const Banner = () => {
         <div>
           <Link
             to="/allFoods"
-            className="px-5 py-3 bg-accent  font-bold rounded-lg"
+            className="px-6 py-2 bg-accent  font-bold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white"
           >
             Hello
           </Link>
