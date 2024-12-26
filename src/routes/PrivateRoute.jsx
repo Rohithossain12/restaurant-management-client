@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }) => {
     return <LoadingSpinner></LoadingSpinner>;
   }
 
-  if (user && user?.email) {
+  if (user && user?.email ) {
     return children;
   }
   return <Navigate to="/login"></Navigate>;

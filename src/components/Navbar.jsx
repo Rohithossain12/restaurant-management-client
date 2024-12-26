@@ -65,9 +65,9 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {!user && (
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
+            
+              <Link className="px-3 rounded-lg py-2 bg-accent" to="/login">Login</Link>
+            
           )}
           {user && (
             <div className="dropdown dropdown-end z-50">
@@ -82,7 +82,7 @@ const Navbar = () => {
                     alt="User Profile Photo"
                     src={user?.photoURL}
                   />
-                  handleLogout
+                 
                 </div>
               </div>
               <ul
