@@ -17,7 +17,7 @@ const Navbar = () => {
       </li>
     </>
   );
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, handleToggleTheme } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -65,9 +65,9 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {!user && (
-            
-              <Link className="px-3 rounded-lg py-2 bg-accent" to="/login">Login</Link>
-            
+            <Link className="px-3 rounded-lg py-2 bg-accent" to="/login">
+              Login
+            </Link>
           )}
           {user && (
             <div className="dropdown dropdown-end z-50">
@@ -82,7 +82,6 @@ const Navbar = () => {
                     alt="User Profile Photo"
                     src={user?.photoURL}
                   />
-                 
                 </div>
               </div>
               <ul
@@ -100,8 +99,16 @@ const Navbar = () => {
                 <li>
                   <Link to="/myOrders">My Orders</Link>
                 </li>
+                <li className="ml-2 ">
+                  <input
+                    onClick={handleToggleTheme}
+                    type="checkbox"
+                    value="synthwave"
+                    className="toggle theme-controller"
+                  />
+                </li>
 
-                <li className="mt-2">
+                <li className="mt-2 ">
                   <button
                     onClick={handleLogout}
                     className="bg-gray-200 block text-center"

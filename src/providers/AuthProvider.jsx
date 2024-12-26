@@ -19,6 +19,19 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
+
+  const [theme, setTheme] = useState('light')
+
+  const handleToggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  };
+  
+  useEffect(() => {
+    document.querySelector('html').setAttribute('data-theme', theme)
+  },[theme]);
+
+
+
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -65,6 +78,7 @@ const AuthProvider = ({ children }) => {
     setLoading,
     errorMessage,
     setErrorMessage,
+    handleToggleTheme,
     updateUserProfile,
   };
 
