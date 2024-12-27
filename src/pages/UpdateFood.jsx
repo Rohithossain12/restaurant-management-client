@@ -62,7 +62,7 @@ const UpdateFood = () => {
       return;
     }
     // sent data to the server
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`http://localhost:5000/updateFood/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

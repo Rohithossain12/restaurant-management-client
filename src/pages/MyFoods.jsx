@@ -6,7 +6,6 @@ const MyFoods = () => {
   const { user } = useContext(AuthContext);
 
   const [foods, setFoods] = useState([]);
-  console.log(foods);
 
   useEffect(() => {
     fetch(`http://localhost:5000/allFoods-ByEmail/${user?.email}`)
