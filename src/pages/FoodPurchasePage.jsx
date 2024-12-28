@@ -7,7 +7,6 @@ import { AuthContext } from "../providers/AuthProvider";
 const FoodPurchasePage = () => {
   const { id } = useParams();
   const [food, setFood] = useState(null);
-  console.log(food);
   const { user } = useContext(AuthContext);
   const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
@@ -31,8 +30,8 @@ const FoodPurchasePage = () => {
       foodName: food.food,
       price: food.price,
       quantity,
-      image:food?.image,
-      owner:food?.addBy.name,
+      image: food?.image,
+      owner: food?.addBy.name,
       buyerName: user?.displayName,
       buyerEmail: user?.email,
       buyingDate: Date.now(),
@@ -95,8 +94,6 @@ const FoodPurchasePage = () => {
             type="text"
             value={food?.quantity}
             readOnly
-            // min="1"
-            // onChange={(e) => setQuantity(Number(e.target.value))}
             className="input input-bordered w-full"
           />
         </div>

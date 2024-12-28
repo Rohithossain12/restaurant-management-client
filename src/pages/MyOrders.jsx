@@ -26,7 +26,7 @@ const MyOrders = () => {
           setOrders((prevOrders) =>
             prevOrders.filter((order) => order._id !== id)
           );
-          toast.success("Order deleted successfully!");
+          toast.success(data.message);
         }
       });
   };
