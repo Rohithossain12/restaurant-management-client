@@ -1,6 +1,7 @@
 import moment from "moment";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import toast from "react-hot-toast";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState();
@@ -13,6 +14,22 @@ const MyOrders = () => {
         .then((data) => setOrders(data));
     }
   }, [user?.email]);
+
+  //   delete my orders
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/addPurchase/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setOrders((prevOrders) =>
+            prevOrders.filter((order) => order._id !== id)
+          );
+          toast.success("Order deleted successfully!");
+        }
+      });
+  };
 
   return (
     <div>
@@ -59,7 +76,7 @@ const MyOrders = () => {
                     </td>
                     <td className="border border-gray-200 px-4 py-2">
                       <button
-                        //   onClick={() => handleDelete(order._id)}
+                        onClick={() => handleDelete(order?._id)}
                         className="bg-red-500 text-white px-3 py-1 rounded"
                       >
                         Delete
