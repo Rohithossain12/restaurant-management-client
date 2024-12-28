@@ -1,9 +1,10 @@
 import { p } from "motion/react-client";
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const SingleFood = () => {
   const food = useLoaderData();
+
   const {
     category,
     quantity,
@@ -11,7 +12,7 @@ const SingleFood = () => {
     price,
     image,
     food: name,
-
+    _id,
     making,
     ingredients,
   } = food || {};
@@ -35,9 +36,12 @@ const SingleFood = () => {
           <p>Ingredients : {ingredients}</p>
           <p>Making: {making}</p>
           <div className="mt-2">
-            <button className="px-3 py-1.5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full  ">
+            <Link
+              to={`/purchase/${_id}`}
+              className="px-3 py-1.5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full  "
+            >
               Purchase
-            </button>
+            </Link>
           </div>
         </div>
       </div>

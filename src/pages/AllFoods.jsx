@@ -6,9 +6,13 @@ const AllFoods = () => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allFood?search=${search}`)
-      .then((res) => res.json())
-      .then((data) => setFoods(data));
+    if (search !== null && search !== undefined) {
+      fetch(
+        `http://localhost:5000/allFood?search=${encodeURIComponent(search)}`
+      )
+        .then((res) => res.json())
+        .then((data) => setFoods(data));
+    }
   }, [search]);
 
   const handleReset = (event) => {
@@ -50,7 +54,10 @@ const AllFoods = () => {
             />
             <p>Search</p>
           </label>
-          <button onClick={handleReset} className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white">
+          <button
+            onClick={handleReset}
+            className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white"
+          >
             Reset
           </button>
         </form>

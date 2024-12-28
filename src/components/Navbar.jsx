@@ -31,7 +31,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-blue-200">
+    <div className="bg-base-200">
       <div className="navbar  container mx-auto px-5">
         <div className="navbar-start">
           <div className="dropdown">
@@ -58,7 +58,9 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+         <img 
+         className="h-12 rounded-lg"
+         src="https://i.ibb.co.com/tJsLkHr/Whats-App-Image-2024-12-27-at-16-40-17-d9a08c7f.jpg" alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -119,8 +121,11 @@ const Navbar = () => {
               </ul>
             </div>
           )}
+          
         </div>
+        
       </div>
+     
     </div>
   );
 };

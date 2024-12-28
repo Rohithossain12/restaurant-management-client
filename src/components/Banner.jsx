@@ -40,9 +40,9 @@ const Banner = () => {
         <div>
           <Link
             to="/allFoods"
-            className="px-6 py-2 bg-accent  font-bold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white"
+            className="btn  font-bold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white"
           >
-          Buy Food
+         All Foods
           </Link>
         </div>
       </div>
@@ -59,50 +59,3 @@ const Banner = () => {
 
 export default Banner;
 
-{
-  /* <div className="hero bg-base-200 p-12 mt-10 ">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="flex-1">
-          <motion.img
-          animate={{y:[50,100,50]}}
-          transition={{duration:10, repeat:Infinity}}
-            src=""
-            className="max-w-sm w-64 rounded-t-[30px] rounded-br-[30px] border-l-4 border-b-4 shadow-2xl border-blue-400"
-          />
-          <motion.img
-          animate={{x:[100,150,100]}}
-          transition={{duration:10, delay:5, repeat:Infinity}}
-            src=""
-            className="max-w-sm w-64 rounded-t-[30px] rounded-br-[30px] border-l-4 border-b-4 shadow-2xl border-blue-400"
-          />
-        </div>
-        <div className="flex-1">
-          <motion.h1
-            animate={{ x: 50, color: ["#f10eba"] }}
-            transition={{
-              duration: 2,
-              delay: 1,
-              ease: easeOut,
-              repeat: Infinity,
-            }}
-            className=" lg:text-4xl md:text-3xl text-2xl font-bold"
-          >
-            {" "}
-            <motion.span
-              animate={{
-                ,
-              }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              
-            </motion.span>{" "}
-          
-          </motion.h1>
-          <p className="py-6">
-            
-          </p>
-          <button className="btn btn-primary">Get Started</button>
-        </div>
-      </div>
-    </div> */
-}
