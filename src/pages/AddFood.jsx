@@ -24,6 +24,8 @@ const AddFood = () => {
       name: user?.displayName,
     };
 
+    const purchaseCount = 0;
+
     const formData = {
       food,
       image,
@@ -35,6 +37,7 @@ const AddFood = () => {
       ingredients,
       making,
       addBy,
+      purchaseCount,
     };
 
     if (isNaN(price) || price <= 0) {

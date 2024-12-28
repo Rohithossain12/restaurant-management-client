@@ -3,11 +3,11 @@ import toast from "react-hot-toast";
 import { useParams, useNavigate } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { AuthContext } from "../providers/AuthProvider";
-// import { toast } from "react-toastify";  // For custom toast notifications
 
 const FoodPurchasePage = () => {
   const { id } = useParams();
   const [food, setFood] = useState(null);
+  console.log(food);
   const { user } = useContext(AuthContext);
   const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
@@ -17,7 +17,9 @@ const FoodPurchasePage = () => {
     fetch(`http://localhost:5000/allFoods/${id}`)
       .then((res) => res.json())
       .then((data) => setFood(data))
-      .catch((error) => console.error("Error fetching food:", error));
+      .catch(() => {
+        toast.error("Error fetching food");
+      });
   }, [id]);
 
   const handlePurchase = (e) => {
@@ -29,6 +31,8 @@ const FoodPurchasePage = () => {
       foodName: food.food,
       price: food.price,
       quantity,
+      image:food?.image,
+      owner:food?.addBy.name,
       buyerName: user?.displayName,
       buyerEmail: user?.email,
       buyingDate: Date.now(),
@@ -52,7 +56,7 @@ const FoodPurchasePage = () => {
           toast.success("Purchase completed successfully!");
           navigate("/");
         } else {
-          toast.error("Purchase failed. Please try again.");
+          toast.error(data.message);
         }
       })
       .catch(() => {
@@ -70,7 +74,7 @@ const FoodPurchasePage = () => {
           <label className="block font-medium">Food Name</label>
           <input
             type="text"
-            value={food.food}
+            value={food?.food}
             readOnly
             className="input input-bordered w-full"
           />
@@ -79,7 +83,7 @@ const FoodPurchasePage = () => {
           <label className="block font-medium">Price (per item)</label>
           <input
             type="text"
-            value={`${food.price} Tk`}
+            value={`${food?.price} Tk`}
             readOnly
             className="input input-bordered w-full"
           />
@@ -134,7 +138,11 @@ const FoodPurchasePage = () => {
             className="input input-bordered w-full"
           />
         </div>
-        <button type="submit" className="btn btn-primary w-full mt-4">
+        <button
+          disabled={quantity > food?.quantity || quantity < 1}
+          type="submit"
+          className="btn btn-primary w-full mt-4"
+        >
           Purchase
         </button>
       </form>

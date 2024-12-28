@@ -15,6 +15,7 @@ const SingleFood = () => {
     _id,
     making,
     ingredients,
+    purchaseCount,
   } = food || {};
 
   return (
@@ -32,6 +33,7 @@ const SingleFood = () => {
           <p>Category : {category}</p>
           <p>Price : {price} Tk. </p>
           <p>Quantity : {quantity}</p>
+          <p>Purchase Count :{purchaseCount}</p>
           <p>Description: {description}</p>
           <p>Ingredients : {ingredients}</p>
           <p>Making: {making}</p>
