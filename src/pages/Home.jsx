@@ -6,7 +6,6 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const Home = () => {
   const foodData = useLoaderData();
-  console.log(foodData);
   return (
     <div>
       <Banner></Banner>
@@ -24,7 +23,7 @@ const Home = () => {
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5  ">
-          {foodData.map((food) => (
+          {foodData?.map((food) => (
             <TopSelling key={food._id} food={food}></TopSelling>
           ))}
         </div>
