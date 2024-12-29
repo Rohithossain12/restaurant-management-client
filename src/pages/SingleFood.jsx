@@ -1,4 +1,3 @@
-import { p } from "motion/react-client";
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
@@ -14,6 +13,7 @@ const SingleFood = () => {
     food: name,
     _id,
     making,
+    origin,
     ingredients,
     purchaseCount,
   } = food || {};
@@ -28,15 +28,16 @@ const SingleFood = () => {
             alt="foods"
           />
         </div>
-        <div className="spacey-4 space-y-2 ml-5 md:ml-0  ">
+        <div className="spacey-4 space-y-1 ml-5 md:ml-0  ">
           <h2 className="text-lg font-bold">Name: {name}</h2>
           <p>Category : {category}</p>
           <p>Price : {price} Tk. </p>
+          <p>Origin :{origin}</p>
           <p>Quantity : {quantity}</p>
           <p>Purchase Count :{purchaseCount}</p>
           <p>Description: {description}</p>
           <p>Ingredients : {ingredients}</p>
-          <p>Making: {making}</p>
+          <p className="pb-2">Making: {making}</p>
           <div className="mt-2">
             <Link
               to={`/purchase/${_id}`}

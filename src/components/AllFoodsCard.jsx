@@ -20,7 +20,7 @@ const AllFoodsCard = ({ food }) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Name:{name} </h2>
+        <h2 className="font-bold">Name:{name} </h2>
         <p>Category :{category} </p>
         <p>Price : {price} tk</p>
         <p>Quantity :{quantity} </p>

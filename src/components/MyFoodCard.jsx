@@ -13,10 +13,10 @@ const MyFoodCard = ({ food }) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Name:{name} </h2>
-        <p>Category :{category} </p>
+        <h2 className="font-bold">Name: {name} </h2>
+        <p>Category : {category} </p>
         <p>Price : {price} tk</p>
-        <p>Quantity :{quantity} </p>
+        <p>Quantity : {quantity} </p>
         <div className=" text-center flex gap-5">
           <Link
             to={`/update/${_id}`}

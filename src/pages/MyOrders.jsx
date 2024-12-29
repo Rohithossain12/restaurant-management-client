@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState();
+  console.log(orders)
   const { user } = useContext(AuthContext);
 
   useEffect(() => {

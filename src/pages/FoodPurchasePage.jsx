@@ -8,7 +8,7 @@ const FoodPurchasePage = () => {
   const { id } = useParams();
   const [food, setFood] = useState(null);
   const { user } = useContext(AuthContext);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
