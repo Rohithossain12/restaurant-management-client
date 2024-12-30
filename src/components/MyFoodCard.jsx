@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const MyFoodCard = ({ food }) => {
   const { image, category, price, quantity, _id, food: name } = food || {};
   return (
-    <div className="card  bg-base-300 hover:bg-white transition hover:scale-105 shadow-xl">
+    <div className="card  bg-base-200 hover:bg-white transition hover:scale-105 shadow-xl">
       <figure className="  p-2">
         <img
           className="w-[328px] h-[193px] object-cover rounded-lg"

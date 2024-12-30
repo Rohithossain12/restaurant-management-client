@@ -68,7 +68,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {!user && (
-            <Link className="px-3 rounded-lg py-2 bg-accent" to="/login">
+            <Link className="px-3 rounded-lg py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white font-bold" to="/login">
               Login
             </Link>
           )}

@@ -129,11 +129,16 @@ const Register = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Register</button>
+              <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white">
+                Register
+              </button>
             </div>
           </form>
           <div className="form-control px-10">
-            <p onClick={handleGoogleLogin} className="btn btn-primary">
+            <p
+              onClick={handleGoogleLogin}
+              className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white"
+            >
               Login With Google
             </p>
           </div>

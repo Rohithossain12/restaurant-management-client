@@ -11,7 +11,7 @@ const AllFoodsCard = ({ food }) => {
     food: name,
   } = food || {};
   return (
-    <div className="card  bg-base-300 hover:bg-white transform transition-all duration-500 ease-in-out hover:scale-105 ">
+    <div className="card  bg-base-200 hover:bg-white transform transition-all duration-500 ease-in-out hover:scale-105 ">
       <figure className="  p-2">
         <img
           className="w-[328px] h-[193px] object-cover rounded-lg transform transition-all duration-500 ease-in-out hover:scale-105"

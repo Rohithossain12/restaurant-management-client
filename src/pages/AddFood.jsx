@@ -70,16 +70,13 @@ const AddFood = () => {
       toast.success("Food Added Successfully....!!");
     } catch (err) {
       toast.error(err.message);
-      console.log(err.message)
     }
   };
 
   return (
-    <div className="mt-10 mb-10 bg-[#F4F3F0] container mx-auto rounded-lg">
+    <div className="mt-10 mb-10 bg-[#F4F3F0]  container mx-auto rounded-lg">
       <Helmet>
-        <title>
-          Master Chef | Add Food
-        </title>
+        <title>Master Chef | Add Food</title>
       </Helmet>
       <div className="card   shrink-0 p-16">
         <h1 className="text-[#374151] md:text-2xl text-xl lg:text-4xl font-bold text-center">

@@ -42,7 +42,7 @@ const Banner = () => {
             to="/allFoods"
             className="btn  font-bold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white"
           >
-         All Foods
+         Buy Foods
           </Link>
         </div>
       </div>

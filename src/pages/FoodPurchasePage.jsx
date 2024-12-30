@@ -68,7 +68,7 @@ const FoodPurchasePage = () => {
   if (!food) return <LoadingSpinner></LoadingSpinner>;
 
   return (
-    <div className="container mx-auto p-6 mb-10">
+    <div className="container mx-auto p-6 mb-10 mt-10 rounded-lg  bg-base-200">
       <Helmet>
         <title>Master Chef | Food Purchase</title>
       </Helmet>
