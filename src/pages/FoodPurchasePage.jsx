@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { AuthContext } from "../providers/AuthProvider";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const FoodPurchasePage = () => {
   const { id } = useParams();
@@ -68,6 +69,9 @@ const FoodPurchasePage = () => {
 
   return (
     <div className="container mx-auto p-6">
+      <Helmet>
+        <title>Master Chef | Food Purchase</title>
+      </Helmet>
       <h1 className="text-2xl font-bold mb-4">Food Purchase</h1>
       <form onSubmit={handlePurchase} className="space-y-4">
         <div>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import MyFoodCard from "../components/MyFoodCard";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const MyFoods = () => {
   const { user } = useContext(AuthContext);
@@ -16,6 +17,11 @@ const MyFoods = () => {
 
   return (
     <div className="mt-10 mb-10">
+      <Helmet>
+        <title>
+          Master Chef | My Foods
+        </title>
+      </Helmet>
       <div
         className="hero mb-10 "
         style={{

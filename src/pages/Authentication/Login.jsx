@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import Lottie from "lottie-react";
 import loginAnimationData from "../../assets/Animation - 1735022282207.json";
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -58,7 +59,11 @@ const Login = () => {
   };
 
   return (
+    
     <div className="hero bg-base-200 min-h-screen mt-8 mb-10  rounded-lg">
+      <Helmet>
+        <title>Master Chef  |  Login</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row-reverse ">
         <div className="text-center lg:text-left ">
           <Lottie animationData={loginAnimationData}></Lottie>

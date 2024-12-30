@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState();
@@ -42,6 +43,11 @@ const MyOrders = () => {
   return (
     <div>
       <div className="container mx-auto p-6">
+        <Helmet>
+            <title>
+                Master Chef | My Orders
+            </title>
+        </Helmet>
         <h1 className="text-2xl font-bold mb-4">My Orders</h1>
         {orders?.length === 0 ? (
           <p className="text-center text-gray-500">No orders found.</p>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -90,6 +91,11 @@ const UpdateFood = () => {
 
   return (
     <div className="mt-10 mb-10 bg-[#F4F3F0] container mx-auto rounded-lg">
+      <Helmet>
+        <title>
+          Master Chef | Update Food
+        </title>
+      </Helmet>
       <div className="card   shrink-0 p-16">
         <h1 className="text-[#374151] md:text-2xl text-xl lg:text-4xl font-bold text-center">
           Update Food

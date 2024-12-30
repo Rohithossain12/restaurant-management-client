@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import AboutUs from "../components/AboutUs";
 import TopSelling from "../components/TopSelling";
 import { Link, useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const foodData = useLoaderData();
@@ -11,6 +12,11 @@ const Home = () => {
       <Banner></Banner>
       <div className=" ">
         <div className="text-center mb-8">
+            <Helmet>
+                <title>
+                    Master Chef | Home
+                </title>
+            </Helmet>
           <h1 className="lg:text-3xl md:text-2xl text-xl font-bold mb-3">
             Top Selling Food Items
           </h1>

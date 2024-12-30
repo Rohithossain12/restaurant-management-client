@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AllFoodsCard from "../components/AllFoodsCard";
+import { Helmet } from "react-helmet";
 
 const AllFoods = () => {
   const [foods, setFoods] = useState();
@@ -22,6 +23,11 @@ const AllFoods = () => {
 
   return (
     <div className="mt-10 ">
+      <Helmet>
+        <title>
+          Master Chef | All Foods
+        </title>
+      </Helmet>
       <div className="mb-10 ">
         <div
           className="hero "

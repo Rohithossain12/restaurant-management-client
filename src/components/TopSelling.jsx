@@ -26,6 +26,7 @@ const TopSelling = ({ food }) => {
             <p>Category : {category} </p>
             <p>Price :  {price} tk</p>
             <p>Quantity : {quantity} </p>
+            <p>Purchase Count : {purchaseCount} </p>
             <div className=" text-center flex gap-5">
               <Link
                 to={`/singleFood/${_id}`}

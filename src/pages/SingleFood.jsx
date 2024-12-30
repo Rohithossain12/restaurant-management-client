@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const SingleFood = () => {
@@ -20,6 +21,11 @@ const SingleFood = () => {
 
   return (
     <div className="mt-10 pb-10 px-5   ">
+      <Helmet>
+        <title>
+          Master Chef | Single Food Page 
+        </title>
+      </Helmet>
       <div className="flex flex-col bg-base-300 md:flex-row max-w-4xl  border rounded-xl  space-y-4  mx-auto gap-5 p-2 ">
         <div className=" p-2 pr-0 md:w-[500px] md:h-[350px] ">
           <img

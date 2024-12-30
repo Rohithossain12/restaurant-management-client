@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const images = [
   "https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -43,6 +44,11 @@ const Gallery = () => {
 
   return (
     <div className="mt-10 mb-10">
+      <Helmet>
+        <title>
+          Master Chef | Gallery
+        </title>
+      </Helmet>
       <div
         className="hero "
         style={{

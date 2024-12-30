@@ -3,6 +3,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const AddFood = () => {
   const { user } = useContext(AuthContext);
@@ -75,6 +76,11 @@ const AddFood = () => {
 
   return (
     <div className="mt-10 mb-10 bg-[#F4F3F0] container mx-auto rounded-lg">
+      <Helmet>
+        <title>
+          Master Chef | Add Food
+        </title>
+      </Helmet>
       <div className="card   shrink-0 p-16">
         <h1 className="text-[#374151] md:text-2xl text-xl lg:text-4xl font-bold text-center">
           Add Food
