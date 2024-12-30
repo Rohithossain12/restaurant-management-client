@@ -47,11 +47,7 @@ const router = createBrowserRouter([
 
       {
         path: "/gallery",
-        element: (
-          <PrivateRoute>
-            <Gallery></Gallery>
-          </PrivateRoute>
-        ),
+        element: <Gallery></Gallery>,
       },
       {
         path: "/addFood",
@@ -72,11 +68,20 @@ const router = createBrowserRouter([
 
       {
         path: "/myOrders",
-        element: <MyOrders></MyOrders>,
+        element: (
+          <PrivateRoute>
+            <MyOrders></MyOrders>,
+          </PrivateRoute>
+        ),
       },
       {
         path: "/purchase/:id",
-        element: <FoodPurchasePage></FoodPurchasePage>,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <FoodPurchasePage></FoodPurchasePage>
+          </PrivateRoute>
+        ),
       },
 
       {

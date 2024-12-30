@@ -60,13 +60,16 @@ const AddFood = () => {
 
     // make a post request using axios
     try {
-      axios.post("http://localhost:5000/addFood", formData);
+      axios.post("http://localhost:5000/addFood", formData, {
+        withCredentials: true,
+      });
       // reset form data
       form.reset();
       // show toast
       toast.success("Food Added Successfully....!!");
     } catch (err) {
       toast.error(err.message);
+      console.log(err.message)
     }
   };
 

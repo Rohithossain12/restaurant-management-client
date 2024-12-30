@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import MyFoodCard from "../components/MyFoodCard";
+import axios from "axios";
 
 const MyFoods = () => {
   const { user } = useContext(AuthContext);
@@ -8,9 +9,9 @@ const MyFoods = () => {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allFoods-ByEmail/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => setFoods(data));
+    axios
+      .get(`http://localhost:5000/allFoods-ByEmail/${user?.email}`,{withCredentials:true})
+      .then((res) => setFoods(res.data));
   }, [user?.email]);
 
   return (

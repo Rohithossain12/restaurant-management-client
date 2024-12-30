@@ -3,12 +3,13 @@ import toast from "react-hot-toast";
 import { useParams, useNavigate } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { AuthContext } from "../providers/AuthProvider";
+import axios from "axios";
 
 const FoodPurchasePage = () => {
   const { id } = useParams();
   const [food, setFood] = useState(null);
   const { user } = useContext(AuthContext);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -42,15 +43,15 @@ const FoodPurchasePage = () => {
     }
 
     // Post the purchase data to the backend
-    fetch("http://localhost:5000/addPurchase", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(purchaseData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
+    axios
+      .post("http://localhost:5000/addPurchase", purchaseData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      })
+      .then((response) => {
+        const data = response.data;
         if (data.success) {
           toast.success("Purchase completed successfully!");
           navigate("/");

@@ -2,33 +2,40 @@ import moment from "moment";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState();
-  console.log(orders)
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/addPurchase?email=${user?.email}`)
-        .then((res) => res.json())
-        .then((data) => setOrders(data));
+      axios
+        .get(`http://localhost:5000/addPurchase?email=${user?.email}`, {
+          withCredentials: true,
+        })
+
+        .then((res) => setOrders(res.data));
     }
   }, [user?.email]);
 
   //   delete my orders
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/addPurchase/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
+    axios
+      .delete(`http://localhost:5000/addPurchase/${id}`, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        const data = response.data;
         if (data.success) {
           setOrders((prevOrders) =>
             prevOrders.filter((order) => order._id !== id)
           );
           toast.success(data.message);
         }
+      })
+      .catch(() => {
+        toast.error("An error occurred while deleting the order.");
       });
   };
 
@@ -53,7 +60,7 @@ const MyOrders = () => {
               </thead>
               <tbody>
                 {orders?.map((order) => (
-                  <tr key={orders._id}>
+                  <tr key={order._id}>
                     <td className="border border-gray-200 px-4 py-2">
                       <img
                         src={`${order?.image}`}

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -61,17 +62,15 @@ const UpdateFood = () => {
       });
       return;
     }
-    // sent data to the server
-    fetch(`http://localhost:5000/updateFood/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedProduct),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.modifiedCount) {
+    axios
+      .put(`http://localhost:5000/updateFood/${_id}`, updatedProduct, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      })
+      .then((response) => {
+        if (response.data.modifiedCount) {
           Swal.fire({
             title: "Success!",
             text: "Product Updated Successfully",
@@ -79,6 +78,13 @@ const UpdateFood = () => {
             confirmButtonText: "Close",
           });
         }
+      })
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Update Failed",
+          text: "Something went wrong while updating the product.",
+        });
       });
   };
 
