@@ -68,7 +68,7 @@ const FoodPurchasePage = () => {
   if (!food) return <LoadingSpinner></LoadingSpinner>;
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-6 mb-10">
       <Helmet>
         <title>Master Chef | Food Purchase</title>
       </Helmet>
@@ -143,7 +143,7 @@ const FoodPurchasePage = () => {
         <button
           disabled={quantity > food?.quantity || quantity < 1}
           type="submit"
-          className="btn btn-primary w-full mt-4"
+          className="btn btn-primary w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white "
         >
           Purchase
         </button>

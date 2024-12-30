@@ -58,9 +58,10 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-         <img 
-         className="h-12 rounded-lg"
-         src="https://i.ibb.co.com/tJsLkHr/Whats-App-Image-2024-12-27-at-16-40-17-d9a08c7f.jpg" alt="" />
+        <div>
+          <h3 className="text-lg lg:text-2xl md:text-xl font-bold"><span className="text-red-500">Mas</span><span className="text-green-500">ter</span> <span className="text-red-500">Ch</span><span className="text-green-500">ef</span></h3>
+          
+        </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -131,18 +132,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
-{
-  /* <div className="navbar bg-base-100 shadow-sm container px-4 mx-auto">
-  <div className="flex-1">
-    <Link to="/" className="flex gap-2 items-center">
-      <img className='w-auto h-7' src={logo} alt='' />
-      <span className="font-bold">Kascchi Vai</span>
-    </Link>
-  </div>
-  <div className="flex-none">
-    <ul className="menu menu-horizontal px-1">
-   
-    </ul>
-  </div>
-</div>; */
-}
+
+ 
