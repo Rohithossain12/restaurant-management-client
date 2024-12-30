@@ -1,8 +1,37 @@
-# React + Vite
+# Master Chef
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to our Food Restaurant Management Website, your all-in-one solution for managing restaurant operations seamlessly. From menu customization to order tracking, we streamline every process to enhance customer satisfaction. Optimize staff management, inventory control, and sales analytics effortlessly. Elevate your restaurant experience with modern and efficient tools tailored to your needs.
 
-Currently, two official plugins are available:
+## Technologies used.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**
+- **firebase**
+- **Tailwind css**
+- **Daisy Ui**
+- **Context Api**
+- **React hot Tost**
+- **Use Navigate**
+- **React Helmet**
+- **Jwt**
+- **UseEffect**
+- **sweetalert2**
+- **MongoDb**
+- **react-motion**
+- **React Tooltip**
+- **axios**
+
+## Features.
+
+- **User can also added product**
+- **User can also remove product**
+- **User can also update product**
+- **User can also register this website**
+- **You can also Login this Website**
+- **You can also choose dark and light mode on this Website**
+- **User Login with google**
+- **User can also logout this website**
+- **User can also search by product**
+- **User Click buy foods he/she show all foods**
+- **User Click view details button and show foods details**
+
+## Live Link.
