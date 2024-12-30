@@ -4,6 +4,7 @@ import AboutUs from "../components/AboutUs";
 import TopSelling from "../components/TopSelling";
 import { Link, useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import FastFoodSection from "../components/FastFoodSection";
 
 const Home = () => {
   const foodData = useLoaderData();
@@ -40,6 +41,9 @@ const Home = () => {
           >
             See All{" "}
           </Link>
+        </div>
+        <div className="mt-10 mb-10">
+            <FastFoodSection></FastFoodSection>
         </div>
       </div>
       <AboutUs></AboutUs>
