@@ -29,7 +29,7 @@ const TopSelling = ({ food }) => {
             <div className=" text-center flex gap-5">
               <Link
                 to={`/singleFood/${_id}`}
-                className="px-5 py-1.5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full"
+                className="px-4 py-1.5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full"
               >
                 Details
               </Link>
