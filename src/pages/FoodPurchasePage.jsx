@@ -28,9 +28,9 @@ const FoodPurchasePage = () => {
 
     // Create the purchase object
     const purchaseData = {
-      foodId: food._id,
-      foodName: food.food,
-      price: food.price,
+      foodId: food?._id,
+      foodName: food?.food,
+      price: food?.price,
       quantity,
       image: food?.image,
       owner: food?.addBy.name,
