@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateFood = () => {
@@ -64,12 +64,16 @@ const UpdateFood = () => {
       return;
     }
     axios
-      .put(`https://server-nine-gold.vercel.app/updateFood/${_id}`, updatedProduct, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      })
+      .put(
+        `https://server-nine-gold.vercel.app/updateFood/${_id}`,
+        updatedProduct,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      )
       .then((response) => {
         if (response.data.modifiedCount) {
           Swal.fire({
@@ -92,9 +96,7 @@ const UpdateFood = () => {
   return (
     <div className="mt-10 mb-10 bg-[#F4F3F0] container mx-auto rounded-lg">
       <Helmet>
-        <title>
-          Master Chef | Update Food
-        </title>
+        <title>Master Chef | Update Food</title>
       </Helmet>
       <div className="card   shrink-0 p-16">
         <h1 className="text-[#374151] md:text-2xl text-xl lg:text-4xl font-bold text-center">
@@ -269,9 +271,9 @@ const UpdateFood = () => {
 
           {/* Submit Button */}
           <div className="form-control mt-8">
-            <Link to='/allFoods' className="btn bg-[#D2B48C] font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white">
+            <button className="btn bg-[#D2B48C] font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white">
               Update
-            </Link>
+            </button>
           </div>
         </form>
       </div>
