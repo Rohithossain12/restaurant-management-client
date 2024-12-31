@@ -58,17 +58,24 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-        <div>
-          <h3 className="text-lg lg:text-2xl md:text-xl font-bold"><span className="text-red-500">Mas</span><span className="text-green-500">ter</span> <span className="text-red-500">Ch</span><span className="text-green-500">ef</span></h3>
-          
-        </div>
+          <div>
+            <h3 className="text-lg lg:text-2xl md:text-xl font-bold">
+              <span className="text-red-500">Mas</span>
+              <span className="text-green-500">ter</span>{" "}
+              <span className="text-red-500">Ch</span>
+              <span className="text-green-500">ef</span>
+            </h3>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
           {!user && (
-            <Link className="px-3 rounded-lg py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white font-bold" to="/login">
+            <Link
+              className="px-2 rounded-lg py-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white font-bold"
+              to="/login"
+            >
               Login
             </Link>
           )}
@@ -122,15 +129,10 @@ const Navbar = () => {
               </ul>
             </div>
           )}
-          
         </div>
-        
       </div>
-     
     </div>
   );
 };
 
 export default Navbar;
-
- 

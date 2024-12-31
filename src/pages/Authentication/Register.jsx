@@ -5,6 +5,7 @@ import registerAnimationData from "../../assets/Animation - 1733844389416.json";
 import Lottie from "lottie-react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -72,27 +73,33 @@ const Register = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen mt-8 mb-10 rounded-lg ">
-      <div className="hero-content flex-col lg:flex-row-reverse ">
-        <div className="text-center lg:text-left ">
+    <div className="hero bg-base-200 min-h-screen mt-8 mb-10 rounded-lg overflow-hidden">
+      <Helmet>
+        <title>Master Chef | Register</title>
+      </Helmet>
+      <div className="hero-content flex-col lg:flex-row-reverse w-full lg:items-center px-4 lg:px-8">
+        <div className="text-center lg:text-left w-full lg:w-1/2">
           <Lottie animationData={registerAnimationData}></Lottie>
         </div>
-        <div className="card bg-base-200 w-full max-w-2xl shrink-0  p-10">
-          <h1 className="text-4xl font-bold text-center ">Register now!</h1>
-          <form onSubmit={handleRegister} className="card-body p-10">
-            <div className="form-control">
+        <div className="bg-base-200 max-w-2xl w-full shrink-0 rounded-lg p-5 lg:p-8">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6">
+            Register now...!
+          </h1>
+          <form onSubmit={handleRegister} className="card-body p-0">
+            <div className="form-control mb-2">
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
               <input
                 type="text"
-                name="Name"
+                name="name"
                 placeholder="Enter Your Name"
                 className="input input-bordered"
                 required
               />
             </div>
-            <div className="form-control">
+
+            <div className="form-control mb-2">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
@@ -104,50 +111,56 @@ const Register = () => {
                 required
               />
             </div>
-            <div className="form-control">
+
+            <div className="form-control mb-2">
               <label className="label">
                 <span className="label-text">Photo URL</span>
               </label>
               <input
                 type="text"
                 name="photo"
-                placeholder="Enter your PhotoURL"
+                placeholder="Enter your Photo URL"
                 className="input input-bordered"
                 required
               />
             </div>
-            <div className="form-control">
+
+            <div className="form-control mb-2">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
                 type="password"
                 name="password"
-                placeholder="password"
+                placeholder="Enter your password"
                 className="input input-bordered"
                 required
               />
             </div>
+
             <div className="form-control mt-6">
-              <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white">
+              <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white w-full">
                 Register
               </button>
             </div>
           </form>
-          <div className="form-control px-10">
-            <p
+
+          <div className="form-control mt-4">
+            <button
               onClick={handleGoogleLogin}
-              className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white"
+              className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white w-full"
             >
               Login With Google
-            </p>
+            </button>
           </div>
+
           <p className="text-center font-bold pt-5 pb-3">
-            You have an Already Account ?{" "}
-            <Link to="/login" className="text-red-500">
+            Already have an account?{" "}
+            <Link to="/login" className="text-red-500 underline">
               Please Login
-            </Link>{" "}
+            </Link>
           </p>
+
           {errorMessage && (
             <p className="text-red-500 font-bold text-center pb-5">
               {errorMessage}

@@ -59,19 +59,20 @@ const Login = () => {
   };
 
   return (
-    
-    <div className="hero bg-base-200 min-h-screen mt-8 mb-10  rounded-lg">
+    <div className="hero bg-base-200 min-h-screen mt-8 mb-10 rounded-lg overflow-hidden">
       <Helmet>
-        <title>Master Chef  |  Login</title>
+        <title>Master Chef | Login</title>
       </Helmet>
-      <div className="hero-content flex-col lg:flex-row-reverse ">
-        <div className="text-center lg:text-left ">
+      <div className="hero-content flex-col lg:flex-row-reverse w-full lg:items-center px-4 lg:px-8">
+        <div className="text-center lg:text-left w-full lg:w-1/2">
           <Lottie animationData={loginAnimationData}></Lottie>
         </div>
-        <div className="card bg-base-200 w-full max-w-2xl shrink-0  p-10">
-          <h1 className="text-4xl font-bold text-center ">Login now!</h1>
-          <form onSubmit={handleLogin} className="card-body p-10">
-            <div className="form-control">
+        <div className="bg-base-200 max-w-2xl w-full shrink-0 rounded-lg  p-5 lg:p-8">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6">
+            Login now...!
+          </h1>
+          <form onSubmit={handleLogin} className="card-body p-0">
+            <div className="form-control mb-2">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
@@ -84,7 +85,7 @@ const Login = () => {
               />
             </div>
 
-            <div className="form-control">
+            <div className="form-control mb-2">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
@@ -96,21 +97,30 @@ const Login = () => {
                 required
               />
             </div>
+
             <div className="form-control mt-6">
-              <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white">Login</button>
+              <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white w-full">
+                Login
+              </button>
             </div>
           </form>
-          <div className="form-control px-10">
-            <p onClick={handleGoogleLogin} className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white">
+
+          <div className="form-control mt-4">
+            <button
+              onClick={handleGoogleLogin}
+              className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white w-full"
+            >
               Login With Google
-            </p>
+            </button>
           </div>
+
           <p className="text-center font-bold pt-5 pb-3">
-            Don't have an account yet ?{" "}
-            <Link to="/register" className="text-red-500">
+            Don't have an account yet?{" "}
+            <Link to="/register" className="text-red-500 underline">
               Please Register
-            </Link>{" "}
+            </Link>
           </p>
+
           {errorMessage && (
             <p className="text-red-500 font-bold text-center pb-5">
               {errorMessage}
