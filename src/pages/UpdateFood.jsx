@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import {  useLoaderData, } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateFood = () => {
