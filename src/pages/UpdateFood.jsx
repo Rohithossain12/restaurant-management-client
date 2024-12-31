@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Helmet } from "react-helmet";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateFood = () => {
@@ -269,9 +269,9 @@ const UpdateFood = () => {
 
           {/* Submit Button */}
           <div className="form-control mt-8">
-            <button className="btn bg-[#D2B48C] font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white">
+            <Link to='/allFoods' className="btn bg-[#D2B48C] font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white">
               Update
-            </button>
+            </Link>
           </div>
         </form>
       </div>
