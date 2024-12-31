@@ -64,7 +64,7 @@ const UpdateFood = () => {
       return;
     }
     axios
-      .put(`http://localhost:5000/updateFood/${_id}`, updatedProduct, {
+      .put(`https://server-nine-gold.vercel.app/updateFood/${_id}`, updatedProduct, {
         headers: {
           "Content-Type": "application/json",
         },

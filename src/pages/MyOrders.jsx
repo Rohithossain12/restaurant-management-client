@@ -12,7 +12,7 @@ const MyOrders = () => {
   useEffect(() => {
     if (user?.email) {
       axios
-        .get(`http://localhost:5000/addPurchase?email=${user?.email}`, {
+        .get(`https://server-nine-gold.vercel.app/addPurchase?email=${user?.email}`, {
           withCredentials: true,
         })
 
@@ -23,7 +23,7 @@ const MyOrders = () => {
   //   delete my orders
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/addPurchase/${id}`, {
+      .delete(`https://server-nine-gold.vercel.app/addPurchase/${id}`, {
         withCredentials: true,
       })
       .then((response) => {

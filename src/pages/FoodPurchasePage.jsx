@@ -15,7 +15,7 @@ const FoodPurchasePage = () => {
 
   useEffect(() => {
     // Fetch the food details by ID from the backend
-    fetch(`http://localhost:5000/allFoods/${id}`)
+    fetch(`https://server-nine-gold.vercel.app/allFoods/${id}`)
       .then((res) => res.json())
       .then((data) => setFood(data))
       .catch(() => {
@@ -45,7 +45,7 @@ const FoodPurchasePage = () => {
 
     // Post the purchase data to the backend
     axios
-      .post("http://localhost:5000/addPurchase", purchaseData, {
+      .post("https://server-nine-gold.vercel.app/addPurchase", purchaseData, {
         headers: {
           "Content-Type": "application/json",
         },

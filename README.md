@@ -19,6 +19,7 @@ Welcome to our Food Restaurant Management Website, your all-in-one solution for 
 - **react-motion**
 - **React Tooltip**
 - **axios**
+- **Lottie React**
 
 ## Features.
 
@@ -35,3 +36,4 @@ Welcome to our Food Restaurant Management Website, your all-in-one solution for 
 - **User Click view details button and show foods details**
 
 ## Live Link.
+### https://melodic-crumble-4e3302.netlify.app/

@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/foodItems"),
+        loader: () => fetch("https://server-nine-gold.vercel.app/foodItems"),
       },
       {
         path: "/login",
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         path: "/singleFood/:id",
         element: <SingleFood></SingleFood>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allFoods/${params.id}`),
+          fetch(`https://server-nine-gold.vercel.app/allFoods/${params.id}`),
       },
 
       {
@@ -88,7 +88,7 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <UpdateFood></UpdateFood>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allFoods/${params.id}`),
+          fetch(`https://server-nine-gold.vercel.app/allFoods/${params.id}`),
       },
     ],
   },

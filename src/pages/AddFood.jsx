@@ -61,7 +61,7 @@ const AddFood = () => {
 
     // make a post request using axios
     try {
-      axios.post("http://localhost:5000/addFood", formData, {
+      axios.post("https://server-nine-gold.vercel.app/addFood", formData, {
         withCredentials: true,
       });
       // reset form data

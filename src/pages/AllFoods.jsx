@@ -9,7 +9,7 @@ const AllFoods = () => {
   useEffect(() => {
     if (search !== null && search !== undefined) {
       fetch(
-        `http://localhost:5000/allFood?search=${encodeURIComponent(search)}`
+        `https://server-nine-gold.vercel.app/allFood?search=${encodeURIComponent(search)}`
       )
         .then((res) => res.json())
         .then((data) => setFoods(data));

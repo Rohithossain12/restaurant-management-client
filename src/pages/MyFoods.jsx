@@ -11,7 +11,7 @@ const MyFoods = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/allFoods-ByEmail/${user?.email}`,{withCredentials:true})
+      .get(`https://server-nine-gold.vercel.app/allFoods-ByEmail/${user?.email}`,{withCredentials:true})
       .then((res) => setFoods(res.data));
   }, [user?.email]);
 
