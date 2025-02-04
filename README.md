@@ -36,4 +36,4 @@ Welcome to our Food Restaurant Management Website, your all-in-one solution for 
 - **User Click view details button and show foods details**
 
 ## Live Link.
-### https://melodic-crumble-4e3302.netlify.app/
+### https://cute-kulfi-0cc763.netlify.app/
