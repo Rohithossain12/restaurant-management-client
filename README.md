@@ -41,10 +41,6 @@ Welcome to **Master Chef**, a modern and efficient food restaurant management we
 - Seamless product purchasing experience with a "View Details" feature  
 - User logout functionality  
 
-### **Admin Features (Optional Scope)**  
-- Manage users and product listings  
-- Analyze sales reports and restaurant performance  
-
 ## **Installation**  
 
 1. **Clone the Repository:**  
