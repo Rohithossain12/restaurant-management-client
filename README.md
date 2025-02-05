@@ -5,7 +5,7 @@ Here’s a polished and well-structured README file based on your project overvi
 # **Master Chef**  
 Welcome to **Master Chef**, a modern and efficient food restaurant management website designed to simplify operations and enhance customer satisfaction. From managing menus and tracking orders to inventory control and staff management, this platform offers powerful tools for restaurant owners and users alike.  
 
-![Master Chef Banner](https://i.ibb.co/JwbL3xYW/Capture-PNGytsfdts.png)  
+![Master Chef Banner](https://i.ibb.co.com/WNJnqQ3g/Capturdcfvfcde.png)  
 
 ## **Table of Contents**  
 - [Technologies Used](#technologies-used)  
