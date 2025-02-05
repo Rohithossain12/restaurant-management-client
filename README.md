@@ -1,6 +1,7 @@
 
-
 ---
+
+![Master Chef Banner](https://i.ibb.co.com/WNJnqQ3g/Capturdcfvfcde.png)  
 
 # **Master Chef**  
 Welcome to **Master Chef**, a modern and efficient food restaurant management website designed to simplify operations and enhance customer satisfaction.
@@ -9,7 +10,6 @@ Welcome to **Master Chef**, a modern and efficient food restaurant management we
 - **Streamline staff management** for better workflow.
 - **Enhance customer satisfaction** with easy-to-use tools for restaurant owners and users alike.
 
-![Master Chef Banner](https://i.ibb.co.com/WNJnqQ3g/Capturdcfvfcde.png)  
 
 ## **📖 Table of Contents**  
 - [Technologies Used](#technologies-used)  
