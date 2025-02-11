@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 import Lottie from "lottie-react";
-import loginAnimationData from "../../assets/Animation - 1735022282207.json";
+import animationData from "../../assets/Animation - 1736878783061.json";
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
@@ -10,12 +10,13 @@ const Login = () => {
   const navigate = useNavigate();
   const { signInWithGoogle, signIn, setUser, errorMessage, setErrorMessage } =
     useContext(AuthContext);
+
   const handleGoogleLogin = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
         setUser(user);
-        toast.success(" Login Successful");
+        toast.success("Login Successful");
         navigate("/");
       })
       .catch(() => {
@@ -41,7 +42,7 @@ const Login = () => {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
     if (!passwordRegex.test(password)) {
-      setErrorMessage(" at least one uppercase,one lowercase,one number");
+      setErrorMessage("at least one uppercase, one lowercase, one number");
       return;
     }
 
@@ -49,7 +50,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        toast.success(" Login successful");
+        toast.success("Login successful");
         event.target.reset();
         navigate("/");
       })
@@ -59,73 +60,82 @@ const Login = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen mt-8 mb-10 rounded-lg overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center  px-4 py-10">
       <Helmet>
         <title>Master Chef | Login</title>
       </Helmet>
-      <div className="hero-content flex-col lg:flex-row-reverse w-full lg:items-center px-4 lg:px-8">
-        <div className="text-center lg:text-left w-full lg:w-1/2">
-          <Lottie animationData={loginAnimationData}></Lottie>
+      <div className="max-w-5xl w-full bg-white rounded-lg shadow-lg flex flex-col md:flex-row overflow-hidden">
+        {/* Lottie Animation Section (Right side) */}
+        <div className="md:w-1/2 w-full flex items-center justify-center bg-blue-100 p-6">
+          <Lottie
+            animationData={animationData}
+            loop
+            className="w-full h-full object-contain"
+          />
         </div>
-        <div className="bg-base-200 max-w-2xl w-full shrink-0 rounded-lg  p-5 lg:p-8">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6">
-            Login now...!
-          </h1>
-          <form onSubmit={handleLogin} className="card-body p-0">
-            <div className="form-control mb-2">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                className="input input-bordered"
-                required
-              />
-            </div>
 
-            <div className="form-control mb-2">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="password"
-                className="input input-bordered"
-                required
-              />
-            </div>
+        {/* Login Form Section (Left side) */}
+        <div className="md:w-1/2 w-full flex flex-col bg-[#F4F4F4] justify-center px-8 py-12">
+          <div className="w-full max-w-md">
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-6 text-[#6A1B9A]">
+              Log In to Your Account
+            </h1>
+            <form onSubmit={handleLogin} className="card-body p-0">
+              <div className="form-control mb-2">
+                <label className="label">
+                  <span className="label-text">Email</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
 
-            <div className="form-control mt-6">
-              <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white w-full">
-                Login
+              <div className="form-control mb-2">
+                <label className="label">
+                  <span className="label-text">Password</span>
+                </label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  className="input input-bordered "
+                  required
+                />
+              </div>
+
+              <div className="form-control mt-6">
+                <button className="btn border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full">
+                  Login
+                </button>
+              </div>
+            </form>
+
+            <div className="form-control mt-4">
+              <button
+                onClick={handleGoogleLogin}
+                className="btn border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full"
+              >
+                Login With Google
               </button>
             </div>
-          </form>
 
-          <div className="form-control mt-4">
-            <button
-              onClick={handleGoogleLogin}
-              className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white w-full"
-            >
-              Login With Google
-            </button>
-          </div>
-
-          <p className="text-center font-bold pt-5 pb-3">
-            Don't have an account yet?{" "}
-            <Link to="/register" className="text-red-500 underline">
-              Please Register
-            </Link>
-          </p>
-
-          {errorMessage && (
-            <p className="text-red-500 font-bold text-center pb-5">
-              {errorMessage}
+            <p className="text-center text-[#6A1B9A] font-bold pt-5 pb-3">
+              Don't have an account yet?{" "}
+              <Link to="/register" className="text-red-500 underline">
+                Please Register
+              </Link>
             </p>
-          )}
+
+            {errorMessage && (
+              <p className="text-red-500 font-bold text-center pb-5">
+                {errorMessage}
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </div>

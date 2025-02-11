@@ -2,14 +2,14 @@ import React from "react";
 
 const FastFoodSection = () => {
   return (
-    <section className="p-10 bg-base-200 rounded-lg">
+    <section className="p-10 bg-[#F4F4F4] rounded-lg">
       <div className="container mx-auto text-center rounded-lg">
         {/* Title */}
-        <h2 className="text-4xl font-bold text-gray-800 mb-4 transform transition-all duration-700 ease-in-out hover:scale-105">
+        <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-[#6A1B9A] mb-4 transform transition-all duration-700 ease-in-out hover:scale-105">
           Delicious Fast Food
         </h2>
         {/* Description */}
-        <p className="text-lg text-gray-600 mb-8 px-4">
+        <p className="text-lg text-[#6A1B9A] mb-8 px-4">
           Enjoy your favorite fast food made with fresh ingredients and love!
           Our menu features a variety of tasty meals perfect for any occasion.
         </p>
