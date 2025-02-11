@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { HiArrowLeft } from "react-icons/hi"; 
+import { HiArrowLeft } from "react-icons/hi";
 import animationData from "../assets/Animation - 1736879773410.json";
 import Lottie from "react-lottie-player";
 
