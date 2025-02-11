@@ -1,18 +1,31 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { HiArrowLeft } from "react-icons/hi"; 
+import animationData from "../assets/Animation - 1736879773410.json";
+import Lottie from "react-lottie-player";
 
 const ErrorPage = () => {
   return (
-    <div className=" container mx-auto px-5">
-      <div className="flex flex-col  justify-center  items-center">
-        <img className="" src="https://i.ibb.co.com/jLgrBRw/404.gif" alt="" />
-        <Link
-          to="/"
-          className=" px-2 md:px-6 md:py-2 py-1 rounded-lg -mt-10 md:-mt-28  md:font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white"
-        >
-          {" "}
-          Go Home
-        </Link>
+    <div className="min-h-screen flex items-center justify-center px-4 py-10">
+      <div className="max-w-3xl w-full bg-white rounded-lg  p-8 flex flex-col items-center">
+        {/* Animation Section */}
+        <div className="w-full flex items-center justify-center mb-6">
+          <Lottie
+            loop
+            animationData={animationData}
+            play
+            className="w-full max-w-xs"
+          />
+        </div>
+
+        {/* Button Section */}
+        <div className="w-full flex justify-center">
+          <Link
+            to="/"
+            className="flex items-center text-[#6A1B9A] font-medium hover:underline hover:text-[#6A1B9A]"
+          >
+            <HiArrowLeft className="mr-2" /> Back to Home
+          </Link>
+        </div>
       </div>
     </div>
   );
