@@ -4,26 +4,27 @@ import { Link } from "react-router-dom";
 const MyFoodCard = ({ food }) => {
   const { image, category, price, quantity, _id, food: name } = food || {};
   return (
-    <div className="card  bg-base-200 hover:bg-white transition hover:scale-105 shadow-xl">
-      <figure className="  p-2">
-        <img
-          className="w-[328px] h-[193px] object-cover rounded-lg"
-          src={image}
-          alt="Shoes"
-        />
-      </figure>
-      <div className="card-body">
-        <h2 className="font-bold">Name: {name} </h2>
-        <p>Category : {category} </p>
-        <p>Price : {price} tk</p>
-        <p>Quantity : {quantity} </p>
-        <div className=" text-center flex gap-5">
-          <Link
-            to={`/update/${_id}`}
-            className="px-5 py-1.5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full"
-          >
-            Update
-          </Link>
+    <div className="bg-[#F4F4F4] rounded-lg">
+      <div className="card transition hover:scale-105 ">
+        <figure className="p-2">
+          <img
+            className="w-[328px] h-[193px] object-cover rounded-lg"
+            src={image}
+            alt={name}
+          />
+        </figure>
+        <div className="card-body">
+          <h2 className="font-bold text-[#6A1B9A]">{name}</h2>
+          <p className="text-[#6A1B9A]">{category}</p>
+          <p className="text-[#6A1B9A]">{price} tk</p>
+          <div className="text-center mt-3">
+            <Link
+              to={`/update/${_id}`}
+              className="px-4 py-1.5 border-2 border-[#FF5722] text-[#FF5722] font-bold rounded-full hover:bg-[#FF5722] hover:text-white transition"
+            >
+              Update
+            </Link>
+          </div>
         </div>
       </div>
     </div>

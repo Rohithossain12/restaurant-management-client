@@ -75,7 +75,7 @@ const Navbar = () => {
           </div>
           <Link to="/">
             <div>
-              <h3 className="text-lg lg:text-2xl md:text-xl font-bold">
+              <h3 className="text-lg lg:text-3xl md:text-xl font-bold">
                 <span className="text-[#FF5722]">Mas</span>
                 <span className="text-[#FFC107]">ter</span>{" "}
                 <span className="text-[#FF5722]">Ch</span>

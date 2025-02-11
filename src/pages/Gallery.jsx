@@ -96,14 +96,14 @@ const Gallery = () => {
         {/* Pagination controls */}
         <div className="mt-4 flex justify-between">
           <button
-            className="px-4 py-2 font-bold bg-gradient-to-r rounded-lg from-indigo-500 via-purple-500 to-pink-500 text-lg text-white"
+            className="px-4 py-2 rounded-lg bg-[#FF5722] text-white font-bold"
             onClick={prevPage}
             disabled={currentPage === 1}
           >
             Previous
           </button>
           <button
-            className="px-4 py-2 font-bold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white"
+            className="px-4 py-2 rounded-lg bg-[#FF5722] text-white font-bold"
             onClick={nextPage}
             disabled={currentPage === Math.ceil(images.length / imagesPerPage)}
           >

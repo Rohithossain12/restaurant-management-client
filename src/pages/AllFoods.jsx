@@ -57,13 +57,11 @@ const AllFoods = () => {
               value={search}
               onChange={(event) => setSearch(event.target.value)}
               placeholder="Enter Food Title"
-              
             />
-          
           </label>
           <button
             onClick={handleReset}
-            className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white px-5 py-2 w-full sm:w-auto"
+            className="px-4 py-2 rounded-lg bg-[#FF5722] text-white font-bold"
           >
             Reset
           </button>
