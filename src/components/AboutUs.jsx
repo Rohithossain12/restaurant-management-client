@@ -2,8 +2,8 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="mb-10 bg-base-200 rounded-lg p-5">
-      <h1 className="text-center text-xl font-bold md:text-2xl lg:text-3xl">
+    <div className="mb-10 bg-[#F4F4F4] rounded-lg p-5">
+      <h1 className="text-center text-[#6A1B9A] text-xl font-bold md:text-2xl lg:text-3xl">
         About Us
       </h1>
       <p className="font-bold mb-2">FAQ:</p>

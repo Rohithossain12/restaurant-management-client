@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-   <div className=" bg-base-200 ">
-     <footer className="container mx-auto footer p-10 text-base-content " >
+   <div className=" bg-[#6A1B9A]  ">
+     <footer className="container mx-auto footer p-10 text-white " >
       <aside>
       <h3 className="text-xl lg:text-4xl md:text-2xl font-bold"><span className="text-red-500">Mas</span><span className="text-green-500">ter</span> <span className="text-red-500">Ch</span><span className="text-green-500">ef</span></h3>
       <p className="text-center"><span className="text-green-500 font-bold">Food</span> <span><span className=" font-bold">&</span> </span><span className="text-red-500 font-bold">Drinks</span></p>
@@ -71,9 +71,9 @@ const Footer = () => {
         </nav>
       </nav>
     </footer>
-    <div className="divider pt-4"></div>
-      <p className="text-center mt-5 mb-2 ">
-        &copy; 2024 SportsStore. All rights reserved.
+  
+      <p className="text-center mt-5 pb-5 text-white ">
+        &copy; 2025 SportsStore. All rights reserved.
       </p>
    </div>
    

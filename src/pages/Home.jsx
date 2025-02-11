@@ -13,15 +13,13 @@ const Home = () => {
       <Banner></Banner>
       <div className=" ">
         <div className="text-center mb-8">
-            <Helmet>
-                <title>
-                    Master Chef | Home
-                </title>
-            </Helmet>
-          <h1 className="lg:text-3xl md:text-2xl text-xl font-bold mb-3">
+          <Helmet>
+            <title>Master Chef | Home</title>
+          </Helmet>
+          <h1 className="lg:text-3xl md:text-2xl text-xl font-bold mb-3 text-[#6A1B9A]">
             Top Selling Food Items
           </h1>
-          <p>
+          <p className="text-[#6A1B9A] mb-4">
             "Indulge in our top-selling food items, crafted to perfection and
             loved by all. These dishes are made with premium ingredients and
             packed with irresistible flavors. From appetizers to main courses,
@@ -29,21 +27,22 @@ const Home = () => {
             best and savor the taste of excellence!"
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5  ">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 ">
           {foodData?.map((food) => (
-            <TopSelling key={food._id} food={food}></TopSelling>
+            <TopSelling key={food._id} food={food} />
           ))}
         </div>
-        <div className="text-center mt-5 mb-8 ">
+        <div className="text-center mt-8 mb-8">
           <Link
             to="/allFoods"
-            className="btn  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full"
+            className="px-6 py-2 bg-[#FF5722] text-white font-bold rounded-full hover:bg-[#FF7043] transition"
           >
-            See All{" "}
+            See All
           </Link>
         </div>
+
         <div className="mt-10 mb-10">
-            <FastFoodSection></FastFoodSection>
+          <FastFoodSection></FastFoodSection>
         </div>
       </div>
       <AboutUs></AboutUs>

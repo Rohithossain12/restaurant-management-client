@@ -2,35 +2,26 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const TopSelling = ({ food }) => {
-  const {
-    _id,
-    image,
-    quantity,
-    category,
-    purchaseCount,
-    price,
-    food: name,
-  } = food || {};
+  const { _id, image, food: name, category, price } = food || {};
+
   return (
-    <div className="">
-      <div className="card  bg-base-200 hover:bg-white transition hover:scale-105 shadow-xl">
-        <figure className="  p-2">
+    <div className="bg-[#F4F4F4] rounded-lg">
+      <div className="card transition hover:scale-105 ">
+        <figure className="p-2">
           <img
             className="w-[328px] h-[193px] object-cover rounded-lg"
             src={image}
-            alt="Shoes"
+            alt={name}
           />
         </figure>
         <div className="card-body">
-          <h2 className="font-bold">Name: {name} </h2>
-          <p>Category : {category} </p>
-          <p>Price : {price} tk</p>
-          <p>Quantity : {quantity} </p>
-          <p>Purchase Count : {purchaseCount} </p>
-          <div className=" text-center flex gap-5">
+          <h2 className="font-bold text-[#6A1B9A]">{name}</h2>
+          <p className="text-[#6A1B9A]">{category}</p>
+          <p className="text-[#6A1B9A]">{price} tk</p>
+          <div className="text-center mt-3">
             <Link
               to={`/singleFood/${_id}`}
-              className="px-4 py-1.5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full"
+              className="px-4 py-1.5 border-2 border-[#FF5722] text-[#FF5722] font-bold rounded-full hover:bg-[#FF5722] hover:text-white transition"
             >
               Details
             </Link>
