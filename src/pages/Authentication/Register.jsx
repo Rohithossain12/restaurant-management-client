@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import registerAnimationData from "../../assets/Animation - 1733844389416.json";
+import registerAnimationData from "../../assets/Animation - 1736873044775.json";
 import Lottie from "lottie-react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
@@ -73,17 +73,20 @@ const Register = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen mt-8 mb-10 rounded-lg overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center px-4 py-10">
       <Helmet>
         <title>Master Chef | Register</title>
       </Helmet>
-      <div className="hero-content flex-col lg:flex-row-reverse w-full lg:items-center px-4 lg:px-8">
-        <div className="text-center lg:text-left w-full lg:w-1/2">
-          <Lottie animationData={registerAnimationData}></Lottie>
+      <div className="max-w-5xl w-full bg-white rounded-lg shadow-lg flex flex-col md:flex-row overflow-hidden">
+        {/* Animation Section - Right side */}
+        <div className="md:w-1/2 w-full flex items-center justify-center bg-blue-100 p-6">
+          <Lottie animationData={registerAnimationData} />
         </div>
-        <div className="bg-base-200 max-w-2xl w-full shrink-0 rounded-lg p-5 lg:p-8">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6">
-            Register now...!
+
+        {/* Form Section - Left side */}
+        <div className="md:w-1/2 w-full flex flex-col justify-center bg-[#F4F4F4] px-8 py-12">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-6 text-[#6A1B9A]">
+            Create an Account
           </h1>
           <form onSubmit={handleRegister} className="card-body p-0">
             <div className="form-control mb-2">
@@ -139,7 +142,7 @@ const Register = () => {
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white w-full">
+              <button className="btn border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full">
                 Register
               </button>
             </div>
@@ -148,15 +151,15 @@ const Register = () => {
           <div className="form-control mt-4">
             <button
               onClick={handleGoogleLogin}
-              className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white w-full"
+              className="btn border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full"
             >
               Login With Google
             </button>
           </div>
 
-          <p className="text-center font-bold pt-5 pb-3">
+          <p className="text-center font-bold pt-5 pb-3 text-[#6A1B9A]">
             Already have an account?{" "}
-            <Link to="/login" className="text-red-500 underline">
+            <Link to="/login" className="text-[#FF5722] underline">
               Please Login
             </Link>
           </p>

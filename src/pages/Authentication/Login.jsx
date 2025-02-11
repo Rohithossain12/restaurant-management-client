@@ -125,7 +125,7 @@ const Login = () => {
 
             <p className="text-center text-[#6A1B9A] font-bold pt-5 pb-3">
               Don't have an account yet?{" "}
-              <Link to="/register" className="text-red-500 underline">
+              <Link to="/register" className=" text-[#FF5722] underline">
                 Please Register
               </Link>
             </p>
