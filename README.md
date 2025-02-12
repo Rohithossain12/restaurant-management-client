@@ -1,7 +1,7 @@
 
 ---
 
-![Master Chef Banner](https://i.ibb.co.com/WNJnqQ3g/Capturdcfvfcde.png)  
+![Master Chef Banner](https://i.ibb.co.com/ds9jXq6x/master-chef2-PNG.png)  
 
 # **Master Chef**  
 Welcome to **Master Chef**, a modern and efficient food restaurant management website designed to simplify operations and enhance customer satisfaction.
