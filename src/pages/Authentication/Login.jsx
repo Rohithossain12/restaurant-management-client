@@ -77,6 +77,9 @@ const Login = () => {
         {/* Login Form Section (Left side) */}
         <div className="md:w-1/2 w-full flex flex-col bg-[#F4F4F4] justify-center px-8 py-12">
           <div className="w-full max-w-md">
+            <div className="text-center">
+            <Link to="/" className="text-[#6A1B9A] underline decoration-[#6A1B9A]">go back home</Link>
+            </div>
             <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-6 text-[#6A1B9A]">
               Log In to Your Account
             </h1>

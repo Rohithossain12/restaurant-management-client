@@ -85,6 +85,14 @@ const Register = () => {
 
         {/* Form Section - Left side */}
         <div className="md:w-1/2 w-full flex flex-col justify-center bg-[#F4F4F4] px-8 py-12">
+          <div className="text-center">
+            <Link
+              to="/"
+              className="text-[#6A1B9A] underline decoration-[#6A1B9A]"
+            >
+              go back home
+            </Link>
+          </div>
           <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-6 text-[#6A1B9A]">
             Create an Account
           </h1>
