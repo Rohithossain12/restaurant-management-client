@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Salads",
+    "discount": "15%",
+    "image": "https://i.ibb.co.com/YBKKXwz2/slide1.jpg"
+  },
+  {
+    "name": "Pizza",
+    "discount": "20%",
+    "image": "https://i.ibb.co.com/sJWwTnK6/slide2.jpg"
+  },
+  {
+    "name": "Soups",
+    "discount": "10%",
+    "image": "https://i.ibb.co.com/yc7R7RvR/slide3.jpg"
+  },
+  {
+    "name": "Desserts",
+    "discount": "25%",
+    "image": "https://i.ibb.co.com/qFdQVvhR/slide4.jpg"
+  },
+  {
+    "name": "Salads",
+    "discount": "18%",
+    "image": "https://i.ibb.co.com/YBKKXwz2/slide1.jpg"
+  }
+]
