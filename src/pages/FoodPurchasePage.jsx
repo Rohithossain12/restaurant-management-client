@@ -68,14 +68,16 @@ const FoodPurchasePage = () => {
   if (!food) return <LoadingSpinner></LoadingSpinner>;
 
   return (
-    <div className="container mx-auto p-6 mb-10 mt-10 rounded-lg  bg-base-200">
+    <div className="container mx-auto px-6 py-10 mb-10 mt-10 rounded-lg  bg-[#F4F4F4]">
       <Helmet>
         <title>Master Chef | Food Purchase</title>
       </Helmet>
-      <h1 className="text-2xl font-bold mb-4">Food Purchase</h1>
+      <h1 className="lg:text-3xl md:text-2xl text-xl font-bold mb-4 text-center text-[#6A1B9A]">
+        Food Purchase
+      </h1>
       <form onSubmit={handlePurchase} className="space-y-4">
         <div>
-          <label className="block font-medium">Food Name</label>
+          <label className="block font-medium text-[#6A1B9A]">Food Name</label>
           <input
             type="text"
             value={food?.food}
@@ -84,7 +86,9 @@ const FoodPurchasePage = () => {
           />
         </div>
         <div>
-          <label className="block font-medium">Price (per item)</label>
+          <label className="block font-medium text-[#6A1B9A]">
+            Price (per item)
+          </label>
           <input
             type="text"
             value={`${food?.price} Tk`}
@@ -94,7 +98,9 @@ const FoodPurchasePage = () => {
         </div>
 
         <div>
-          <label className="block font-medium">Available Quantity</label>
+          <label className="block font-medium text-[#6A1B9A]">
+            Available Quantity
+          </label>
           <input
             type="text"
             value={food?.quantity}
@@ -104,7 +110,7 @@ const FoodPurchasePage = () => {
         </div>
 
         <div>
-          <label className="block font-medium">Quantity</label>
+          <label className="block font-medium text-[#6A1B9A]">Quantity</label>
           <input
             type="number"
             value={quantity}
@@ -114,7 +120,7 @@ const FoodPurchasePage = () => {
           />
         </div>
         <div>
-          <label className="block font-medium">Buyer Name</label>
+          <label className="block font-medium text-[#6A1B9A]">Buyer Name</label>
           <input
             type="text"
             value={user?.displayName}
@@ -123,7 +129,9 @@ const FoodPurchasePage = () => {
           />
         </div>
         <div>
-          <label className="block font-medium">Buyer Email</label>
+          <label className="block font-medium text-[#6A1B9A]">
+            Buyer Email
+          </label>
           <input
             type="email"
             value={user?.email}
@@ -132,7 +140,9 @@ const FoodPurchasePage = () => {
           />
         </div>
         <div>
-          <label className="block font-medium">Buying Date</label>
+          <label className="block font-medium text-[#6A1B9A]">
+            Buying Date
+          </label>
           <input
             type="text"
             value={new Date().toLocaleString()}
@@ -143,7 +153,7 @@ const FoodPurchasePage = () => {
         <button
           disabled={quantity > food?.quantity || quantity < 1}
           type="submit"
-          className="btn btn-primary w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white "
+          className="btn border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full "
         >
           Purchase
         </button>

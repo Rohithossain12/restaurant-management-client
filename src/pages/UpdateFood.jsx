@@ -94,12 +94,12 @@ const UpdateFood = () => {
   };
 
   return (
-    <div className="mt-10 mb-10 bg-[#F4F3F0] container mx-auto rounded-lg">
+    <div className="mt-10 mb-10 bg-[#F4F4F4] container mx-auto rounded-lg">
       <Helmet>
         <title>Master Chef | Update Food</title>
       </Helmet>
       <div className="card   shrink-0 p-16">
-        <h1 className="text-[#374151] md:text-2xl text-xl lg:text-4xl font-bold text-center">
+        <h1 className="text-[#6A1B9A] md:text-2xl text-xl lg:text-3xl font-bold text-center">
           Update Food
         </h1>
 
@@ -108,7 +108,7 @@ const UpdateFood = () => {
           <div className="md:flex gap-5">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text font-bold">User Name</span>
+                <span className="label-text font-bold text-[#6A1B9A]">User Name</span>
               </label>
               <input
                 type="text"
@@ -121,7 +121,7 @@ const UpdateFood = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text font-bold">User Email</span>
+                <span className="label-text font-bold text-[#6A1B9A]">User Email</span>
               </label>
               <input
                 type="email"
@@ -138,7 +138,7 @@ const UpdateFood = () => {
           <div className="md:flex gap-5">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text font-bold">Food Name</span>
+                <span className="label-text font-bold text-[#6A1B9A]">Food Name</span>
               </label>
               <input
                 type="text"
@@ -151,7 +151,7 @@ const UpdateFood = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text font-bold">Food Image</span>
+                <span className="label-text font-bold text-[#6A1B9A]">Food Image</span>
               </label>
               <input
                 type="text"
@@ -168,7 +168,7 @@ const UpdateFood = () => {
           <div className="md:flex gap-5">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text font-bold">Food Category</span>
+                <span className="label-text font-bold text-[#6A1B9A]">Food Category</span>
               </label>
               <input
                 type="text"
@@ -181,7 +181,7 @@ const UpdateFood = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text font-bold">Quantity</span>
+                <span className="label-text font-bold text-[#6A1B9A]">Quantity</span>
               </label>
               <input
                 type="text"
@@ -199,7 +199,7 @@ const UpdateFood = () => {
           <div className="md:flex gap-5">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text font-bold">Price</span>
+                <span className="label-text font-bold text-[#6A1B9A]">Price</span>
               </label>
               <input
                 type="text"
@@ -212,7 +212,7 @@ const UpdateFood = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text font-bold">Food Origin</span>
+                <span className="label-text font-bold text-[#6A1B9A]">Food Origin</span>
               </label>
               <input
                 type="text"
@@ -228,7 +228,7 @@ const UpdateFood = () => {
 
           <div className="form-control ">
             <label className="label">
-              <span className="label-text font-bold">Description</span>
+              <span className="label-text font-bold text-[#6A1B9A]">Description</span>
             </label>
 
             <textarea
@@ -242,7 +242,7 @@ const UpdateFood = () => {
           {/* Ingredients */}
           <div className="form-control ">
             <label className="label">
-              <span className="label-text font-bold">Ingredients</span>
+              <span className="label-text font-bold text-[#6A1B9A]">Ingredients</span>
             </label>
 
             <textarea
@@ -257,7 +257,7 @@ const UpdateFood = () => {
           {/* making procedure */}
           <div className="form-control ">
             <label className="label">
-              <span className="label-text font-bold">Making Procedure </span>
+              <span className="label-text font-bold text-[#6A1B9A]">Making Procedure </span>
             </label>
 
             <textarea
@@ -271,7 +271,7 @@ const UpdateFood = () => {
 
           {/* Submit Button */}
           <div className="form-control mt-8">
-            <button className="btn bg-[#D2B48C] font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white">
+            <button className="btn border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full">
               Update
             </button>
           </div>

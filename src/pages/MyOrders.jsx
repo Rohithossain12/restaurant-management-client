@@ -12,9 +12,12 @@ const MyOrders = () => {
   useEffect(() => {
     if (user?.email) {
       axios
-        .get(`https://server-nine-gold.vercel.app/addPurchase?email=${user?.email}`, {
-          withCredentials: true,
-        })
+        .get(
+          `https://server-nine-gold.vercel.app/addPurchase?email=${user?.email}`,
+          {
+            withCredentials: true,
+          }
+        )
 
         .then((res) => setOrders(res.data));
     }
@@ -42,13 +45,13 @@ const MyOrders = () => {
 
   return (
     <div>
-      <div className="container mx-auto p-6">
+      <div className="container mx-auto p-6 ">
         <Helmet>
-            <title>
-                Master Chef | My Orders
-            </title>
+          <title>Master Chef | My Orders</title>
         </Helmet>
-        <h1 className="text-2xl font-bold mb-4">My Orders</h1>
+        <h1 className="lg:text-3xl md:text-2xl text-xl font-bold mb-6 text-[#6A1B9A] text-center">
+          My Orders
+        </h1>
         {orders?.length === 0 ? (
           <p className="text-center text-gray-500">No orders found.</p>
         ) : (
@@ -91,7 +94,7 @@ const MyOrders = () => {
                     <td className="border border-gray-200 px-4 py-2">
                       <button
                         onClick={() => handleDelete(order?._id)}
-                        className="bg-red-500 text-white px-3 py-1 rounded"
+                        className="bg-[#FF5722] text-white px-3 py-1 rounded"
                       >
                         Delete
                       </button>
