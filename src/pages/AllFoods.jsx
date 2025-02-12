@@ -1,20 +1,42 @@
 import React, { useEffect, useState } from "react";
 import AllFoodsCard from "../components/AllFoodsCard";
 import { Helmet } from "react-helmet";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const AllFoods = () => {
   const [foods, setFoods] = useState();
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (search !== null && search !== undefined) {
+    if (search !== null && search !== undefined && search !== "") {
+      setLoading(true);
       fetch(
         `https://server-nine-gold.vercel.app/allFood?search=${encodeURIComponent(
           search
         )}`
       )
         .then((res) => res.json())
-        .then((data) => setFoods(data));
+        .then((data) => {
+          setFoods(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          setLoading(false);
+        });
+    } else {
+      setLoading(true);
+      fetch("https://server-nine-gold.vercel.app/allFood")
+        .then((res) => res.json())
+        .then((data) => {
+          setFoods(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          setLoading(false);
+        });
     }
   }, [search]);
 
@@ -22,6 +44,8 @@ const AllFoods = () => {
     event.preventDefault();
     setSearch("");
   };
+
+  if (loading) return <LoadingSpinner></LoadingSpinner>;
 
   return (
     <div className="mt-10">

@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const SingleFood = () => {
   const food = useLoaderData();
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (food) {
+      setLoading(false);
+    }
+  }, [food]);
 
   const {
     category,
@@ -18,6 +27,8 @@ const SingleFood = () => {
     ingredients,
     purchaseCount,
   } = food || {};
+
+  if (loading) return <LoadingSpinner></LoadingSpinner>;
 
   return (
     <div className="mt-10 pb-10 px-5 py-6   ">

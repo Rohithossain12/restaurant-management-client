@@ -4,13 +4,16 @@ import { AuthContext } from "../providers/AuthProvider";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { Helmet } from "react-helmet";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const MyOrders = () => {
-  const [orders, setOrders] = useState();
+  const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
     if (user?.email) {
+      setLoading(true);
       axios
         .get(
           `https://server-nine-gold.vercel.app/addPurchase?email=${user?.email}`,
@@ -18,12 +21,18 @@ const MyOrders = () => {
             withCredentials: true,
           }
         )
-
-        .then((res) => setOrders(res.data));
+        .then((res) => {
+          setOrders(res.data);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.error("Error fetching orders:", err);
+          setLoading(false);
+        });
     }
   }, [user?.email]);
 
-  //   delete my orders
+  // Delete order handler
   const handleDelete = (id) => {
     axios
       .delete(`https://server-nine-gold.vercel.app/addPurchase/${id}`, {
@@ -43,9 +52,13 @@ const MyOrders = () => {
       });
   };
 
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div>
-      <div className="container mx-auto p-6 ">
+      <div className="container mx-auto p-6">
         <Helmet>
           <title>Master Chef | My Orders</title>
         </Helmet>

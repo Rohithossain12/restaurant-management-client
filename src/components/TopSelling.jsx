@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LoadingSpinner from "./LoadingSpinner";
 
-const TopSelling = ({ food }) => {
+const TopSelling = ({ food,loading }) => {
   const { _id, image, food: name, category, price } = food || {};
+
+
+  if(loading) return <LoadingSpinner></LoadingSpinner>
 
   return (
     <div className="bg-[#F4F4F4] rounded-lg">

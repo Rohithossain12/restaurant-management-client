@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import AboutUs from "../components/AboutUs";
 import TopSelling from "../components/TopSelling";
@@ -8,15 +8,23 @@ import FastFoodSection from "../components/FastFoodSection";
 import ContactUs from "../components/ContactUs";
 import DiscountFoods from "../components/discount/DiscountFoods";
 
-
 const Home = () => {
   const foodData = useLoaderData();
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    
+    if (foodData) {
+      setLoading(false);
+    }
+  }, [foodData]);
   return (
     <div>
       <Banner></Banner>
 
       <div className="mi-10 mb-10">
-       <DiscountFoods></DiscountFoods>
+        <DiscountFoods></DiscountFoods>
       </div>
       <div className=" ">
         <div className="text-center mb-8">
@@ -36,7 +44,7 @@ const Home = () => {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 ">
           {foodData?.map((food) => (
-            <TopSelling key={food._id} food={food} />
+            <TopSelling key={food._id} food={food} loading={loading} />
           ))}
         </div>
         <div className="text-center mt-8 mb-8">

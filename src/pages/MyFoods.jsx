@@ -3,27 +3,42 @@ import { AuthContext } from "../providers/AuthProvider";
 import MyFoodCard from "../components/MyFoodCard";
 import axios from "axios";
 import { Helmet } from "react-helmet";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const MyFoods = () => {
   const { user } = useContext(AuthContext);
 
   const [foods, setFoods] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get(`https://server-nine-gold.vercel.app/allFoods-ByEmail/${user?.email}`,{withCredentials:true})
-      .then((res) => setFoods(res.data));
+    if (user?.email) {
+      setLoading(true);
+      axios
+        .get(
+          `https://server-nine-gold.vercel.app/allFoods-ByEmail/${user?.email}`,
+          { withCredentials: true }
+        )
+        .then((res) => {
+          setFoods(res.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          setLoading(false);
+        });
+    }
   }, [user?.email]);
+
+  if (loading) return <LoadingSpinner />;
 
   return (
     <div className="mt-10 mb-10">
       <Helmet>
-        <title>
-          Master Chef | My Foods
-        </title>
+        <title>Master Chef | My Foods</title>
       </Helmet>
       <div
-        className="hero mb-10 "
+        className="hero mb-10"
         style={{
           backgroundImage:
             "url(https://www.chicken.ca/wp-content/uploads/2013/05/Moist-Chicken-Burgers-1180x580.jpg)",
