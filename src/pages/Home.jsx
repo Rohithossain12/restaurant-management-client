@@ -5,6 +5,7 @@ import TopSelling from "../components/TopSelling";
 import { Link, useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import FastFoodSection from "../components/FastFoodSection";
+import ContactUs from "../components/ContactUs";
 
 const Home = () => {
   const foodData = useLoaderData();
@@ -46,6 +47,9 @@ const Home = () => {
         </div>
       </div>
       <AboutUs></AboutUs>
+      <div className="mt-10 mb-10">
+        <ContactUs></ContactUs>
+      </div>
     </div>
   );
 };
