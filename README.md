@@ -130,7 +130,7 @@ VITE_appId=your-app-id
 
 ## **🌍 Live Demo**  
 
-🔗 **Explore the live application here:** [Master Chef](https://cute-kulfi-0cc763.netlify.app)  
+🔗 **Explore the live application here:** [Master Chef](https://masterchefr.netlify.app/)  
 
 ---
 
