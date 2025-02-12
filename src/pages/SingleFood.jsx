@@ -20,13 +20,11 @@ const SingleFood = () => {
   } = food || {};
 
   return (
-    <div className="mt-10 pb-10 px-5   ">
+    <div className="mt-10 pb-10 px-5 py-6   ">
       <Helmet>
-        <title>
-          Master Chef | Single Food Page 
-        </title>
+        <title>Master Chef | Single Food Page</title>
       </Helmet>
-      <div className="flex flex-col bg-base-300 md:flex-row max-w-4xl  border rounded-xl  space-y-4  mx-auto gap-5 p-2 ">
+      <div className="flex flex-col bg-[#F4F4F4] md:flex-row max-w-4xl py-5  border rounded-xl  space-y-4  mx-auto gap-5 px-5 ">
         <div className=" p-2 pr-0 md:w-[500px] md:h-[350px] ">
           <img
             className="w-full   h-full overflow-hidden rounded-lg  object-cover"
@@ -34,20 +32,20 @@ const SingleFood = () => {
             alt="foods"
           />
         </div>
-        <div className="spacey-4 space-y-1 ml-5 md:ml-0  ">
-          <h2 className="text-lg font-bold">Name: {name}</h2>
-          <p>Category : {category}</p>
-          <p>Price : {price} Tk. </p>
-          <p>Origin :{origin}</p>
-          <p>Quantity : {quantity}</p>
-          <p>Purchase Count :{purchaseCount}</p>
-          <p>Description: {description}</p>
-          <p>Ingredients : {ingredients}</p>
-          <p className="pb-2">Making: {making}</p>
-          <div className="mt-2">
+        <div className=" space-y-1 ml-5 md:ml-0   ">
+          <h2 className="text-lg font-bold text-[#6A1B9A]">Name: {name}</h2>
+          <p className="text-[#6A1B9A]">Category : {category}</p>
+          <p className="text-[#6A1B9A]">Price : {price} Tk. </p>
+          <p className="text-[#6A1B9A]">Origin : {origin}</p>
+          <p className="text-[#6A1B9A]">Quantity : {quantity}</p>
+          <p className="text-[#6A1B9A]">Purchase Count : {purchaseCount}</p>
+          <p className="text-[#6A1B9A]">Description: {description}</p>
+          <p className="text-[#6A1B9A]">Ingredients : {ingredients}</p>
+          <p className="text-[#6A1B9A] pb-4">Making: {making}</p>
+          <div>
             <Link
               to={`/purchase/${_id}`}
-              className="px-3 py-1.5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full  "
+              className="px-4 py-1.5 border-2 border-[#FF5722] text-[#FF5722] font-bold rounded-full hover:bg-[#FF5722] hover:text-white transition "
             >
               Purchase
             </Link>
