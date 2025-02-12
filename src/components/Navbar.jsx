@@ -71,6 +71,40 @@ const Navbar = () => {
               >
                 Gallery
               </NavLink>
+              {user && (
+                <>
+                  <NavLink
+                    to="/addFood"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-[#FFC107] font-semibold block py-2 outline outline-[#FFC107] rounded-md"
+                        : "text-white block py-2 hover:text-[#FFC107]"
+                    }
+                  >
+                    Add Food
+                  </NavLink>
+                  <NavLink
+                    to="/myFoods"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-[#FFC107] font-semibold block py-2 outline outline-[#FFC107] rounded-md"
+                        : "text-white block py-2 hover:text-[#FFC107]"
+                    }
+                  >
+                    My Foods
+                  </NavLink>
+                  <NavLink
+                    to="/myOrders"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-[#FFC107] font-semibold block py-2 outline outline-[#FFC107] rounded-md"
+                        : "text-white block py-2 hover:text-[#FFC107]"
+                    }
+                  >
+                    My Orders
+                  </NavLink>
+                </>
+              )}
             </div>
           </div>
           <Link to="/">
@@ -115,49 +149,75 @@ const Navbar = () => {
           >
             Gallery
           </NavLink>
+          {user && (
+            <>
+              <NavLink
+                to="/addFood"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#FFC107] font-semibold outline outline-[#FFC107] rounded-md px-2 py-1"
+                    : "text-white hover:text-[#FFC107] px-2 py-1"
+                }
+              >
+                Add Food
+              </NavLink>
+              <NavLink
+                to="/myFoods"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#FFC107] font-semibold outline outline-[#FFC107] rounded-md px-2 py-1"
+                    : "text-white hover:text-[#FFC107] px-2 py-1"
+                }
+              >
+                My Foods
+              </NavLink>
+              <NavLink
+                to="/myOrders"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#FFC107] font-semibold outline outline-[#FFC107] rounded-md px-2 py-1"
+                    : "text-white hover:text-[#FFC107] px-2 py-1"
+                }
+              >
+                My Orders
+              </NavLink>
+            </>
+          )}
         </div>
-        <div className="navbar-end">
-          {!user && (
+        <div className="navbar-end flex items-center gap-4">
+          <input
+            onClick={handleToggleTheme}
+            type="checkbox"
+            value="synthwave"
+            className="toggle theme-controller"
+          />
+
+          {!user ? (
             <Link
               className="px-4 py-2 rounded-lg bg-[#FF5722] text-white font-bold"
               to="/login"
             >
               Login
             </Link>
-          )}
-          {user && (
-            <div className="dropdown dropdown-end z-50">
+          ) : (
+            <div className="flex items-center gap-4">
               <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost btn-circle avatar outline outline-[#FFC107] p-1"
+                title={user?.displayName}
+                className="w-10 h-10 rounded-full outline outline-[#FFC107] p-1"
               >
-                <div title={user?.displayName} className="w-10 rounded-full">
-                  <img
-                    rPolicy="no-referrer"
-                    alt="User Profile Photo"
-                    src={user?.photoURL}
-                  />
-                </div>
+                <img
+                  referrerPolicy="no-referrer"
+                  alt="User Profile"
+                  src={user?.photoURL}
+                  className="w-full h-full rounded-full object-cover"
+                />
               </div>
-              <div
-                tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#6A1B9A] rounded-box w-52 text-center"
+              <button
+                onClick={handleLogout}
+                className="px-4 py-2 rounded-lg bg-[#FF5722] text-white font-bold"
               >
-                <NavLink to="/addFood" className="block py-2 text-white hover:text-[#FFC107]">Add Food</NavLink>
-                <NavLink to="/myFoods" className="block py-2 text-white hover:text-[#FFC107]">My Foods</NavLink>
-                <NavLink to="/myOrders" className="block py-2 text-white hover:text-[#FFC107]">My Orders</NavLink>
-                <div className="ml-2 mt-2">
-                  <input
-                    onClick={handleToggleTheme}
-                    type="checkbox"
-                    value="synthwave"
-                    className="toggle theme-controller"
-                  />
-                </div>
-
-                <button onClick={handleLogout} className="block mt-2 text-white hover:text-[#FFC107] text-center">Logout</button>
-              </div>
+                Logout
+              </button>
             </div>
           )}
         </div>
