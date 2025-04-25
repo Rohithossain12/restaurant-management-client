@@ -1,11 +1,11 @@
-import { useRef } from "react"; // Import useRef
+import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { toast, Toaster } from "react-hot-toast";
 import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 
 const ContactUs = () => {
-  const formRef = useRef(); // Create a ref for the form
+  const formRef = useRef(); 
 
   const handleSubmit = (e) => {
     e.preventDefault();

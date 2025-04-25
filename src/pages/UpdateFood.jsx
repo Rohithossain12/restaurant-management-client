@@ -115,7 +115,7 @@ const UpdateFood = () => {
                 name="name"
                 defaultValue={addBy.name}
                 placeholder="Enter your name"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-500 bg-white"
                 required
               />
             </div>
@@ -129,7 +129,7 @@ const UpdateFood = () => {
                 defaultValue={addBy.email}
                 readOnly
                 placeholder="Enter your email"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-500 bg-white"
                 required
               />
             </div>
@@ -145,7 +145,7 @@ const UpdateFood = () => {
                 name="food"
                 defaultValue={name}
                 placeholder="Enter food name"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-500 bg-white "
                 required
               />
             </div>
@@ -158,7 +158,7 @@ const UpdateFood = () => {
                 name="image"
                 defaultValue={image}
                 placeholder="Enter food image"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-500 bg-white"
                 required
               />
             </div>
@@ -175,7 +175,7 @@ const UpdateFood = () => {
                 name="category"
                 defaultValue={category}
                 placeholder="Enter category name"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-500 bg-white"
                 required
               />
             </div>
@@ -188,7 +188,7 @@ const UpdateFood = () => {
                 placeholder="Enter quantity"
                 name="quantity"
                 defaultValue={quantity}
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-500 bg-white"
                 required
               />
             </div>
@@ -206,7 +206,7 @@ const UpdateFood = () => {
                 placeholder="Enter Price"
                 defaultValue={price}
                 name="price"
-                className="input input-bordered"
+                className="input input-bordered text-gray-500 bg-white"
                 required
               />
             </div>
@@ -219,7 +219,7 @@ const UpdateFood = () => {
                 name="origin"
                 placeholder="Enter food origin"
                 defaultValue={origin}
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-500 bg-white"
                 required
               />
             </div>
@@ -232,7 +232,7 @@ const UpdateFood = () => {
             </label>
 
             <textarea
-              className="textarea textarea-bordered"
+              className="textarea textarea-bordered text-gray-500 bg-white"
               placeholder="Enter description"
               name="description"
               defaultValue={description}
@@ -246,7 +246,7 @@ const UpdateFood = () => {
             </label>
 
             <textarea
-              className="textarea textarea-bordered"
+              className="textarea textarea-bordered text-gray-500 bg-white"
               placeholder="put each Ingredients in a new line"
               name="ingredients"
               defaultValue={ingredients}
@@ -261,7 +261,7 @@ const UpdateFood = () => {
             </label>
 
             <textarea
-              className="textarea textarea-bordered"
+              className="textarea textarea-bordered text-gray-500 bg-white"
               placeholder="put each making procedure in a new line"
               name="making"
               defaultValue={making}
@@ -271,7 +271,7 @@ const UpdateFood = () => {
 
           {/* Submit Button */}
           <div className="form-control mt-8">
-            <button className="btn border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full">
+            <button className="btn border-[#FF5722] bg-white text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full">
               Update
             </button>
           </div>

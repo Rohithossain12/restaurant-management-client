@@ -94,7 +94,7 @@ const AddFood = () => {
                 type="text"
                 name="food"
                 placeholder="Enter food name"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-700 bg-white placeholder:text-gray-400"
                 required
               />
             </div>
@@ -106,7 +106,7 @@ const AddFood = () => {
                 type="text"
                 name="image"
                 placeholder="Enter food image"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-700 bg-white placeholder:text-gray-400"
                 required
               />
             </div>
@@ -122,7 +122,7 @@ const AddFood = () => {
                 type="text"
                 name="category"
                 placeholder="Enter category name"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-700 bg-white placeholder:text-gray-400"
                 required
               />
             </div>
@@ -134,7 +134,7 @@ const AddFood = () => {
                 type="text"
                 placeholder="Enter quantity"
                 name="quantity"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-700 bg-white placeholder:text-gray-400 "
                 required
               />
             </div>
@@ -151,7 +151,7 @@ const AddFood = () => {
                 type="text"
                 placeholder="Enter Price"
                 name="price"
-                className="input input-bordered"
+                className="input input-bordered text-gray-700 bg-white placeholder:text-gray-400"
                 required
               />
             </div>
@@ -163,7 +163,7 @@ const AddFood = () => {
                 type="text"
                 name="origin"
                 placeholder="Enter food origin"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-gray-700 bg-white placeholder:text-gray-400"
                 required
               />
             </div>
@@ -176,7 +176,7 @@ const AddFood = () => {
             </label>
 
             <textarea
-              className="textarea textarea-bordered"
+              className="textarea textarea-bordered text-gray-700 bg-white placeholder:text-gray-400"
               placeholder="Enter description"
               name="description"
               required
@@ -189,7 +189,7 @@ const AddFood = () => {
             </label>
 
             <textarea
-              className="textarea textarea-bordered"
+              className="textarea textarea-bordered text-gray-700 bg-white placeholder:text-gray-400"
               placeholder="put each Ingredients in a new line"
               name="ingredients"
               required
@@ -203,7 +203,7 @@ const AddFood = () => {
             </label>
 
             <textarea
-              className="textarea textarea-bordered"
+              className="textarea textarea-bordered text-gray-700 bg-white placeholder:text-gray-400"
               placeholder="put each making procedure in a new line"
               name="making"
               required
@@ -212,7 +212,7 @@ const AddFood = () => {
 
           {/* Submit Button */}
           <div className="form-control mt-8">
-            <button className="btn border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full">
+            <button className="btn  bg-white placeholder:text-gray-400 border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full">
               Add Item
             </button>
           </div>

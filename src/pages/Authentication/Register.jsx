@@ -105,7 +105,7 @@ const Register = () => {
                 type="text"
                 name="name"
                 placeholder="Enter Your Name"
-                className="input input-bordered"
+                className="input input-bordered bg-white text-gray-700 placeholder:text-gray-400 "
                 required
               />
             </div>
@@ -118,7 +118,7 @@ const Register = () => {
                 type="email"
                 name="email"
                 placeholder="Enter your email"
-                className="input input-bordered"
+                className="input input-bordered bg-white text-gray-700 placeholder:text-gray-400"
                 required
               />
             </div>
@@ -131,7 +131,7 @@ const Register = () => {
                 type="text"
                 name="photo"
                 placeholder="Enter your Photo URL"
-                className="input input-bordered"
+                className="input input-bordered bg-white text-gray-700 placeholder:text-gray-400"
                 required
               />
             </div>
@@ -144,13 +144,13 @@ const Register = () => {
                 type="password"
                 name="password"
                 placeholder="Enter your password"
-                className="input input-bordered"
+                className="input input-bordered bg-white text-gray-700 placeholder:text-gray-400"
                 required
               />
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full">
+              <button className="btn border-[#FF5722] bg-white text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full">
                 Register
               </button>
             </div>
@@ -159,7 +159,7 @@ const Register = () => {
           <div className="form-control mt-4">
             <button
               onClick={handleGoogleLogin}
-              className="btn border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full"
+              className="btn border-[#FF5722] bg-white text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full"
             >
               Login With Google
             </button>

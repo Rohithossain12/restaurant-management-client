@@ -92,7 +92,7 @@ const Login = () => {
                   type="email"
                   name="email"
                   placeholder="Enter your email"
-                  className="input input-bordered"
+                  className="input input-bordered bg-white text-gray-700 placeholder:text-gray-400"
                   required
                 />
               </div>
@@ -105,13 +105,13 @@ const Login = () => {
                   type="password"
                   name="password"
                   placeholder="Password"
-                  className="input input-bordered "
+                  className="input input-bordered bg-white text-gray-700 placeholder:text-gray-400"
                   required
                 />
               </div>
 
               <div className="form-control mt-6">
-                <button className="btn border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full">
+                <button className="btn bg-white  placeholder:text-gray-400 border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full">
                   Login
                 </button>
               </div>
@@ -120,7 +120,7 @@ const Login = () => {
             <div className="form-control mt-4">
               <button
                 onClick={handleGoogleLogin}
-                className="btn border-[#FF5722] text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full"
+                className="btn border-[#FF5722] bg-white text-[#FF5722] font-bold  hover:bg-[#FF5722] hover:text-white transition w-full"
               >
                 Login With Google
               </button>
